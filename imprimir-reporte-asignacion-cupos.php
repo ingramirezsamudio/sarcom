@@ -67,7 +67,9 @@
 					   </tr>';
 	}
 
-	require_once 'inc/mpdf/vendor/autoload.php';
+	// require_once 'inc/mpdf/vendor/autoload.php';
+	require_once 'vendor/autoload.php';
+
 	$mpdf = new \Mpdf\Mpdf();
 	$mpdf->watermarkImgBehind = true;
 	$mpdf->SetHTMLHeader("
