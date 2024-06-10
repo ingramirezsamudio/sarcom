@@ -40,13 +40,37 @@ from usuarios u
 
 				//$roles = implode(" / ",$auth->admin()->getRolesForUserById($id));
 
+
+				// $registered = new DateTime();
+				// $registered->setTimestamp($r->registered);
+				// $fecha_registro = $registered->format('d/m/Y H:i:s');
+				
+				// $last_login = new DateTime();
+				// $last_login->setTimestamp($r->last_login);
+				// $ultimo_acceso = $last_login->format('d/m/Y H:i:s');
+				
+
+				
+				// para php 8.2
 				$registered = new DateTime();
-				$registered->setTimestamp($r->registered);
+				if (!is_null($r->registered)) {
+					$registered->setTimestamp((int)$r->registered);
+				} else {
+					// Maneja el caso cuando $r->registered es null, por ejemplo:
+					$registered->setTimestamp(time());
+				}
 				$fecha_registro = $registered->format('d/m/Y H:i:s');
 
 				$last_login = new DateTime();
-				$last_login->setTimestamp($r->last_login);
+				if (!is_null($r->last_login)) {
+					$last_login->setTimestamp((int)$r->last_login);
+				} else {
+					// Maneja el caso cuando $r->last_login es null, por ejemplo:
+					$last_login->setTimestamp(time());
+				}
 				$ultimo_acceso = $last_login->format('d/m/Y H:i:s');
+
+
 
 
 				$salida[] = [
