@@ -1,6 +1,6 @@
 <?php
-require __DIR__.'/auth/autoload.php';
-$auth = new \Delight\Auth\Auth($db_auth);
+// require __DIR__.'/auth/autoload.php';
+// $auth = new \Delight\Auth\Auth($db_auth);
 
 include("mysql.php");
 
@@ -9,19 +9,19 @@ function url(){
 	return "http://$host/";
 }
 
-function verificaLogin(){
-	require __DIR__.'/auth/autoload.php';
-	$auth = new \Delight\Auth\Auth($db_auth);
-	if (!$auth->isLoggedIn()){
-		header("Location: ".url());
-		exit;
-	}else if ($auth->isLoggedIn() && !$auth->isNormal()){
-		header("Location: ".url());
-		exit;
-	}else{
-		return true;
-	}
-}
+// function verificaLogin(){
+// 	require __DIR__.'/auth/autoload.php';
+// 	$auth = new \Delight\Auth\Auth($db_auth);
+// 	if (!$auth->isLoggedIn()){
+// 		header("Location: ".url());
+// 		exit;
+// 	}else if ($auth->isLoggedIn() && !$auth->isNormal()){
+// 		header("Location: ".url());
+// 		exit;
+// 	}else{
+// 		return true;
+// 	}
+// }
 //Encripta los campos que le pases
 class Password {
     const SALT = 'freelancerpy';
