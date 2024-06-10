@@ -24,11 +24,11 @@ header('Access-Control-Allow-Methods: GET, POST');
 				$where = "AND CONCAT_WS(' ', puerto) LIKE '%$search%'";
 			}
 
-			$db->setQuery("SELECT  cp.id_cupos_proveedor, cp.id_cupo, c.id_cliente, cl.razon_social as cliente, c.id_puerto, pu.puerto,
+			$db->setQuery("SELECT  c.cantidad_original, cp.id_cupos_proveedor, cp.id_cupo, c.id_cliente, cl.razon_social as cliente, c.id_puerto, pu.puerto,
 				DATE_FORMAT(c.fecha, '%d-%m-%Y') AS fecha, DATE_FORMAT(c.fecha_fin, '%d-%m-%Y') AS fecha_fin,  cp.id_proveedor,
 				p.nombre as proveedor, cp.cantidad, DATE_FORMAT(cp.repetir_hasta, '%d-%m-%Y') as repetir_hasta,cp.repetir,cp.id_usuario, u.usuario
 				FROM cupos_proveedor cp
-        left join cupos c on c.id_cupo=cp.id_cupo
+        		left join cupos c on c.id_cupo=cp.id_cupo
 				left join clientes cl on cl.id_cliente=c.id_cliente
 				left join proveedores p on p.id_proveedor=cp.id_proveedor
 				left join puertos pu on pu.id_puerto=c.id_puerto
@@ -74,7 +74,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 				$where = "AND CONCAT_WS(' ', puerto) LIKE '%$search%'";
 			}
 
-			$db->setQuery("SELECT  cp.id_cupos_proveedor, cp.id_cupo, c.id_cliente, cl.razon_social as cliente, c.id_puerto, pu.puerto,
+			$db->setQuery("SELECT  c.cantidad_original,cp.id_cupos_proveedor, cp.id_cupo, c.id_cliente, cl.razon_social as cliente, c.id_puerto, pu.puerto,
 				DATE_FORMAT(c.fecha, '%d-%m-%Y') AS fecha, DATE_FORMAT(c.fecha_fin, '%d-%m-%Y') AS fecha_fin,  cp.id_proveedor,
 				p.nombre as proveedor, cp.cantidad, DATE_FORMAT(cp.repetir_hasta, '%d-%m-%Y') as repetir_hasta,cp.repetir,cp.id_usuario, u.usuario
 				FROM cupos_proveedor cp
@@ -88,7 +88,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 				WHERE 1=1 $where
 				AND cl.id_cliente='$id_cliente'
 				and cp.cantidad = 0
-				and c.fecha_fin >= DATE(NOW())
+				-- and c.fecha_fin >= DATE(NOW())
 
 
 				ORDER BY $sort $order
@@ -109,6 +109,9 @@ header('Access-Control-Allow-Methods: GET, POST');
 		break;
 
 		case 'ver_vencidos':
+
+
+		
 			$db = DataBase::conectar();
 			$where = "";
 			//Parametros de ordenamiento, busqueda y paginacion
@@ -138,7 +141,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 				WHERE 1=1 $where
 				AND cl.id_cliente='$id_cliente'
 				and cp.cantidad > 0
-				-- and c.fecha_fin >= DATE(NOW())
+				and c.fecha_fin < DATE(NOW())
 
 
 				ORDER BY $sort $order

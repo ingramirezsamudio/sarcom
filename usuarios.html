@@ -238,6 +238,7 @@
 					</div>
 					<form class="form" id="formulario" method="post" enctype="multipart/form-data" action="">
 						<input type="hidden" name="hidden_id_usuario" id="hidden_id_usuario">
+						<input type="hidden" name="hidden_id_usuario_creador" id="hidden_id_usuario_creador">
 						<div class="modal-body">
 							<div class="row">
 
@@ -569,6 +570,8 @@
 	//GUARDAR NUEVO REGISTRO O CAMBIOS EDITADOS
 	$("#formulario").submit(function(e){
 		e.preventDefault();
+		$("#hidden_id_usuario_creador").val(localStorage.getItem("id_usuario"));
+				
 		var data = $(this).serializeArray();
 		//data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
 		$.ajax({

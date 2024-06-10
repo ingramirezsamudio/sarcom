@@ -12,8 +12,8 @@
 			$db = DataBase::conectar();
 			$ci = $db->clearText($_POST['ci']);
 			$nombre = $db->clearText($_POST['nombre']);
-      $direccion = $db->clearText($_POST['direccion']);
-      $telefono = $db->clearText($_POST['telefono']);
+      		$direccion = $db->clearText($_POST['direccion']);
+      		$telefono = $db->clearText($_POST['telefono']);
 			$correo = $db->clearText($_POST['correo']);
 			$proveedore = $db->clearText($_POST['proveedore']);
 
@@ -42,6 +42,7 @@
 			$proveedor_correo = $db->clearText($_POST['proveedor_correo']);
 			$proveedor_encargado = $db->clearText($_POST['proveedor_encargado']);
 			$usuario = $db->clearText($_POST['usuario']);
+			$id_usuario_creador = $db->clearText($_POST['hidden_id_usuario_creador']);
 			$password = sha1($db->clearText($_POST['password']));
 
 			if (empty($proveedor_ruc) || empty($proveedor_nombre)) {
@@ -86,8 +87,8 @@
 				echo "Usuario registrado correctamente";
 			}
 			$id_usuario = $db->getLastID();
-			$db->setQuery("INSERT INTO proveedores(ruc, id_usuario , nombre, direccion, telefono, correo, encargado)
-									VALUES('$proveedor_ruc','$id_usuario','$proveedor_nombre', '$proveedor_direccion','$proveedor_telefono','$proveedor_correo','$proveedor_encargado')");
+			$db->setQuery("INSERT INTO proveedores(ruc, id_usuario , nombre, direccion, telefono, correo, encargado, id_usuario_creador)
+									VALUES('$proveedor_ruc','$id_usuario','$proveedor_nombre', '$proveedor_direccion','$proveedor_telefono','$proveedor_correo','$proveedor_encargado','$id_usuario_creador')");
 
 			if(!$db->alter()){
 				echo "Error. ".$db->getError();
@@ -103,6 +104,7 @@
 						$proveedor_ruc = $_POST['proveedor_ruc'];
 						$hidden_id_proveedor = $_POST['hidden_id_proveedor'];
 						$id_usuario = $_POST['hidden_id_usuario'];
+						$id_usuario_creador = $_POST['hidden_id_usuario_creador'];
 						$proveedor_nombre = $_POST['proveedor_nombre'];
 						$proveedor_direccion = $_POST['proveedor_direccion'];
 						$proveedor_telefono = $_POST['proveedor_telefono'];
@@ -197,7 +199,7 @@
 
 
 		case 'ver':
-      $db = DataBase::conectar();
+      		$db = DataBase::conectar();
 			$where = "";
 			//Parametros de ordenamiento, busqueda y paginacion
 			$limit = $_REQUEST['limit'];

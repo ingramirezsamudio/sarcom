@@ -241,6 +241,7 @@
 																			<input class="form-control" type="text" id="proveedor_ruc" name="proveedor_ruc" value=""></input>
 																			<input type="hidden" name="hidden_id_proveedor" id="hidden_id_proveedor" value="">
 																			<input type="hidden" name="hidden_id_usuario" id="hidden_id_usuario" value="">
+																			<input type="hidden" name="hidden_id_usuario_creador" id="hidden_id_usuario_creador" value="">
 																		</div>
 																		<div class="col-md-8">
 																			<label for="proveedor_nombre">Nombre del Proveedor</label>
@@ -304,7 +305,7 @@
 		$(document).ready( function () {
 			//verificar login
 			if (localStorage.getItem("id_usuario")) {
-				console.log('esta logueado');
+				console.log('esta logueado y su id_usuario es '+localStorage.getItem("id_usuario"));
 				//location.replace("inicio.html");
 			}else {
 				console.log('NO esta logueado');
@@ -380,22 +381,37 @@
 
         window.accionesFila = {
             'click .editar': function (e, value, row, index) {
-                $('#modalLabel').html('Editar Proveedor');
-                $('#formulario').attr('action', 'editar');
-                $('#eliminar').show();
-                $('#modal_principal').modal('show');
+				if (localStorage.getItem("id_usuario")!=row.id_usuario_creador && tipo_usuario != 'superadmin' && tipo_usuario != 'admin') {
+					console.log('tu no lo creastes o no eres admin');
+					swal({
+						title: "Atención",
+						text: "No es posible editar un proveedor que no fue creado por tu usuario.",
+						type: "warning",
+						confirmButtonColor: "var(--primary)",
+						confirmButtonText: "Aceptar",
+						closeOnConfirm: true,
+            		});
+				}else{
+					console.log('editalo si queres');
+					$('#modalLabel').html('Editar Proveedor');
+					$('#formulario').attr('action', 'editar');
+					$('#eliminar').show();
+					$('#modal_principal').modal('show');
 
-								$("#hidden_id_proveedor").val(row.id_proveedor);
-								$("#hidden_id_usuario").val(row.id_usuario);
-								$("#ci").val(row.ci);
-								$("#proveedor_ruc").val(row.ruc);
-								$("#proveedor_nombre").val(row.nombre);
-								$("#proveedor_direccion").val(row.direccion);
-								$("#proveedor_telefono").val(row.telefono);
-								$("#proveedor_correo").val(row.correo);
-								$("#proveedor_encargado").val(row.encargado);
-								$("#usuario").val('');
-								$("#password").val('');
+					$("#hidden_id_proveedor").val(row.id_proveedor);
+					$("#hidden_id_usuario").val(row.id_usuario);
+					$("#hidden_id_usuario_creador").val(localStorage.getItem("id_usuario"));
+					$("#ci").val(row.ci);
+					$("#proveedor_ruc").val(row.ruc);
+					$("#proveedor_nombre").val(row.nombre);
+					$("#proveedor_direccion").val(row.direccion);
+					$("#proveedor_telefono").val(row.telefono);
+					$("#proveedor_correo").val(row.correo);
+					$("#proveedor_encargado").val(row.encargado);
+					$("#usuario").val('');
+					$("#password").val('');
+				}
+              
 
             }
         }
@@ -452,7 +468,7 @@
         $('#agregar').click(function(){
             $('#modalLabel').html('Registrar Proveedor');
             $('#formulario').attr('action', 'cargar_proveedor');
-						$('#modal_principal').modal('show');
+			$('#modal_principal').modal('show');
 
         });
 
@@ -478,6 +494,7 @@
         //GUARDAR NUEVO REGISTRO O CAMBIOS EDITADOS
         $("#formulario").submit(function(e){
             e.preventDefault();
+			$("#hidden_id_usuario_creador").val(localStorage.getItem("id_usuario"));
             var data = $(this).serializeArray();
             //data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
             $.ajax({

@@ -78,8 +78,10 @@ header('Access-Control-Allow-Methods: GET, POST');
 				left join puertos pu on pu.id_puerto=c.id_puerto
 
 				WHERE 1=1 $where
+				and c.cantidad = 0
+
 				ORDER BY $sort $order LIMIT $offset, $limit");
-			$rows = $db->loadObjectList();
+				$rows = $db->loadObjectList();
 
 			$db->setQuery("SELECT FOUND_ROWS() as total");
 			$total_row = $db->loadObject();
@@ -119,8 +121,11 @@ header('Access-Control-Allow-Methods: GET, POST');
 				left join puertos pu on pu.id_puerto=c.id_puerto
 
 				WHERE 1=1 $where
+				-- and c.cantidad > 0
+				and c.fecha_fin < DATE(NOW())
+
 				ORDER BY $sort $order LIMIT $offset, $limit");
-			$rows = $db->loadObjectList();
+				$rows = $db->loadObjectList();
 
 			$db->setQuery("SELECT FOUND_ROWS() as total");
 			$total_row = $db->loadObject();

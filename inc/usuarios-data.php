@@ -171,6 +171,7 @@ from usuarios u
 			$puerto =  $db->clearText($_POST['puertos']);
 			$usuario = $db->clearText(trim(strtolower($_POST['usuario'])));
 			$password = sha1($db->clearText($_POST['password']));
+			$id_usuario_creador = $db->clearText($_POST['hidden_id_usuario_creador']);
 
 			// $expira=="on" ? $status = 4 : $status = 0;
 
@@ -248,8 +249,8 @@ from usuarios u
 				}
 				$id_usuario = $db->getLastID();
 
-				$db->setQuery("INSERT INTO proveedores (id_usuario, nombre, telefono, correo, direccion)
-				VALUES('$id_usuario','$nombre', '$telefono','$email', '$direccion')");
+				$db->setQuery("INSERT INTO proveedores (id_usuario, nombre, telefono, correo, direccion, id_usuario_creador)
+				VALUES('$id_usuario','$nombre', '$telefono','$email', '$direccion', '$id_usuario_creador')");
 
 				if(!$db->alter()){
 					echo "Error. ".$db->getError();
