@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Cupos - Sarcom</title>
+	<style type="text/css">
+
+	:root {
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --gray-dark: #343a40;
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --secondary: #f8f9fa;
+	  --success: #006666;
+	  --success_hover: #004040;
+	  --info: #00732d;
+	  --warning: #d16901;
+	  --warning_hover: #a35201;
+	  --default: #949494;
+	  --default_hover: #7e7e7e;
+	  --danger: #c72344;
+	  --light: #f8f9fa;
+	  --dark: #343a40;
+	  --cyan: #01c0c8;
+	  --purple: #7460ee;
+	  --primary: #102a83;
+	  --primary_hover: #00732d;
+	  --focus: 0 0 0 2px rgba(84, 38, 147, 0.3);
+	  --breakpoint-xs: 0;
+	  --breakpoint-sm: 576px;
+	  --breakpoint-md: 768px;
+	  --breakpoint-lg: 992px;
+	  --breakpoint-xl: 1600px;
+	  --font-family-sans-serif: 'Rubik', sans-serif;
+	  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	};
+
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+
+	<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+	<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+	<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="dist/js/qrcode.js" type="text/javascript" ></script>
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+    	<!--include topbar -->
+    	<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<!-- ============================================================== -->
+				<!-- Logo -->
+				<!-- ============================================================== -->
+				<!--<div class="navbar-header">
+					<a class="navbar-brand" href="index">
+						<b><img src="<?php echo $logo_icono; ?>" alt="homepage" class="dark-logo" /></b>
+						<span>
+							<img src="<?php echo $logo_texto; ?>" alt="homepage" class="dark-logo" />
+							<img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+						</span>
+					</a>
+				</div>-->
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+							<form class="app-search">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+							</form>
+						</li>-->
+						<li class="nav-item">
+							<span class="titulo">Cupos Asignados</span>
+						</li>
+					</ul>
+					<!-- <?php //echo $menu_central; ?> -->
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 id="nombre_usuario"class="m-b-0">Usuario</h4>
+										<!--<p class=" m-b-0">varun@gmail.com</p>-->
+									</div>
+								</div>
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="aa"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+						<div id="toolbar">
+							<div class="form-inline" role="form">
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" id="agregar" data-toggle="modal" data-target="#modal_principal">Asignar Cupos</button>
+								</div>
+								<div class="form-group ml-1">
+									<button type="button" class="btn btn-danger" id="ver_agotados">Ver Cupos Agotados</button>
+								</div>
+
+								<div class="form-group ml-1">
+									<button type="button" class="btn btn-danger" id="ocultar_agotados">Ocultar Agotados</button>
+								</div>
+
+								<div class="form-group ml-1">
+									<button type="button" class="btn btn-secondary" id="ver_vencidos">Ver Cupos Vencidos</button>
+								</div>
+
+								<div class="form-group ml-1">
+									<button type="button" class="btn btn-secondary" id="ocultar_vencidos">Ocultar Vencidos</button>
+								</div>
+							</div>
+						</div>
+						<table id="tabla" data-url="" data-toolbar="#toolbar" data-show-export="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons" data-show-fullscreen="true"></table>
+
+          <!-- MODA PRINCIPAL -->
+            <div class="modal fade" id="modal_principal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel"></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form class="form" id="formulario" method="post" enctype="multipart/form-data" action="">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+													<div class="form-row">
+
+													<div class="col-md-12 col-sm-12">
+														<table id="tabla_cupos" data-url="" data-toolbar="#toolbar2" data-show-export="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons" data-show-fullscreen="true"></table>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+
+
+						<!-- MODAL ASIGNAR -->
+							<div class="modal fade" id="modal_asignar" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="modalLabel_asignar"></h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form class="form" id="formulario_asignar" method="post" enctype="multipart/form-data" action="">
+											<input type="hidden" name="hidden_id_cupo" id="hidden_id_cupo">
+											<input type="hidden" name="hidden_repetir" id="hidden_repetir" value="no">
+											<input type="hidden" name="hidden_id_cliente" id="hidden_id_cliente">
+											<input type="hidden" name="hidden_id_usuario" id="hidden_id_usuario">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-12 col-sm-12">
+														<div class="form-row">
+															<div class="form-group col-md-6 col-sm-12">
+																		<label for="proveedor">Proveedor</label>
+																				<select class="form-control input-sm select2" name="proveedor" id="proveedor" aria-label="button-direccion" required></select>
+															</div>
+															<div class="form-group col-md-6 col-sm-12">
+																		<label for="cantidad">Cantidad a asignar</label>
+																		<input class="form-control input-sm" id="cantidad" name="cantidad" type="number" autocomplete="off" required>
+																</div>
+														</div>
+
+														<div id="repetir_asignacion_boton" class="form-row">
+															<button type="button" class="btn btn-primary" >Crear Programación</button>
+														</div>
+														<div id="repetir_asignacion_boton_cancelar" class="form-row" style="display: none">
+															<button type="button" class="btn btn-info" >Cancelar Programación</button>
+														</div>
+
+
+														<div id="repetir_asignacion_div" class="form-row mt-2" style="display: none">
+															<div class="form-group col-md-12 col-sm-12">
+																	<label for="repetir">Repetir asignación hasta el día</label>
+																	<input class="form-control input-sm" id="repetir" name="repetir" type="date" autocomplete="off">
+																</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button id="eliminar_1" type="button" class="btn btn-danger mr-auto" style="display:none">Eliminar</button>
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+												<button type="submit" class="btn btn-primary">Guardar</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal fade" id="modal_qr" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+								<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="modalLabel_qr">Código QR</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form class="form" id="formulario_qr" method="post" enctype="multipart/form-data" action="">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-12 col-sm-12">
+														<div class="form-row">
+															<div style="margin-bottom: 10px;" class="col-md-12 col-sm-12">
+																<div id="divQR" class="">
+																	<!-- prueba de QRcode.js -->
+																	<div id="qrcode" style="display: flex; justify-content: center;"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+												<button type="button" class="btn btn-primary" onclick="printDiv('divQR')">Imprimir</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+
+
+							<!-- MODAL EDICION -->
+								<div class="modal fade" id="modal_editar" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="modalLabel_editar"></h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<form class="form" id="formulario_editar" method="post" enctype="multipart/form-data" action="">
+												<input type="hidden" name="hidden_id_cupo_editar" id="hidden_id_cupo_editar">
+												<input type="hidden" name="hidden_id_cupo_proveedor_editar" id="hidden_id_cupo_proveedor_editar">
+												<input type="hidden" name="hidden_id_cliente_editar" id="hidden_id_cliente_editar">
+												<input type="hidden" name="hidden_cantidad_original" id="hidden_cantidad_original">
+												<input type="hidden" name="hidden_id_usuario_editar" id="hidden_id_usuario_editar">
+												<input type="hidden" name="hidden_repetir" id="hidden_repetir_editar" value="no">
+
+												<div class="modal-body">
+													<div class="row">
+														<div class="col-md-12 col-sm-12">
+															<div class="form-row">
+																<h4 class="col-md-12" id="aviso_cupos"></h4>
+																<div class="form-group col-md-6 col-sm-12">
+																			<label for="proveedor_editar">Proveedor</label>
+																					<select class="form-control input-sm select2" name="proveedor_editar" id="proveedor_editar" aria-label="button-direccion" required></select>
+																</div>
+																<div class="form-group col-md-6 col-sm-12">
+																			<label for="cantidad_editar">Cantidad a asignar</label>
+																			<input class="form-control input-sm" id="cantidad_editar" name="cantidad_editar" type="number" autocomplete="off" required>
+																</div>
+
+
+
+
+																<div class="form-group col-md-12 col-sm-12">
+
+																<div id="repetir_asignacion_boton_editar" class="form-row">
+																	<button type="button" class="btn btn-primary" >Crear Programación</button>
+																</div>
+																<div id="repetir_asignacion_boton_cancelar_editar" class="form-row" style="display: none">
+																	<button type="button" class="btn btn-info" >Cancelar Programación</button>
+																</div>
+
+
+																<div id="repetir_asignacion_div_editar" class="form-row mt-2" style="display: none">
+																	<div class="form-group col-md-12 col-sm-12">
+																			<label for="repetir">Repetir asignación hasta el día</label>
+																			<input class="form-control input-sm" id="repetir_editar" name="repetir_editar" type="date" autocomplete="off">
+																		</div>
+																	</div>
+																</div>
+
+
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button id="eliminar" type="button" class="btn btn-danger mr-auto">Eliminar</button>
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+													<button type="submit" class="btn btn-primary">Guardar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+
+
+					</div><!-- End col-12 -->
+                </div><!-- End Page Content -->
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+       <!-- <?phpinclude 'footer.php'; ?> -->
+    </div><!-- End Wrapper -->
+    <script type="text/javascript">
+		$(document).ready( function () {
+			//verificar login
+			if (localStorage.getItem("id_usuario")) {
+				console.log('esta logueado');
+				$('#hidden_id_usuario').val(localStorage.getItem("id_usuario"));
+				$('#hidden_id_usuario_editar').val(localStorage.getItem("id_usuario"));
+				//location.replace("inicio.html");
+			}else {
+				console.log('NO esta logueado');
+				location.replace("login.html");
+			}
+
+			//definir tipo de usuario
+			if (localStorage.getItem("tipo_usuario")=='superadmin') {
+				tipo_usuario = 'superadmin';
+			}else if (localStorage.getItem("tipo_usuario")=='admin') {
+				tipo_usuario = 'admin';
+			}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+				tipo_usuario = 'proveedor';
+			}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+				tipo_usuario = 'cliente';
+			}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+				tipo_usuario = 'encargado';
+			}
+			else {
+				tipo_usuario = 'visitante';
+			};
+			$('#nombre_usuario').html(localStorage.getItem("nombre_usuario"));
+			$('#ocultar_agotados').hide();
+			$('#ocultar_vencidos').hide();
+
+			//ajax para el leftbar
+			$.ajax({
+				dataType: 'html',
+				async: true,
+				type: 'POST',
+				url: 'inc/leftbar-data.php',
+				cache: false,
+				data: {q: tipo_usuario},
+				success: function (data, status, xhr) {
+					var n = data.toLowerCase().indexOf("error");
+					if (n == -1) {
+						$('#sidebarnav').html(data);
+						cargarScriptMenu();
+					}else{
+						alertDismissJS(data, "error");
+					}
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+
+			$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+
+
+
+
+
+		});	//fin de onready
+
+		function cargarScriptMenu() {
+			let scriptActual = document.getElementById('script');
+			let nuevoScript = document.createElement('script');
+			nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+			document.head.replaceChild(nuevoScript, scriptActual);
+		}
+
+		function logout(){
+				localStorage.clear();
+				sessionStorage.clear();
+				location.replace('login.html');
+		}
+
+        /*$('.modal').on("hidden.bs.modal", function (e) { //fire on closing modal box
+            if ($('.modal:visible').length) { // check whether parent modal is opend after child modal close
+                $('body').addClass('modal-open'); // if open mean length is 1 then add a bootstrap css class to body of the page
+            }
+        });*/
+
+        function iconosFila(value, row, index) {
+            return [
+                '<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm editar" title="Editar datos"><i class="fa fa-edit"></i>&nbsp; Editar</button>'
+            ].join('');
+        }
+				function iconosFila2(value, row, index) {
+						return [
+								'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm asignar" title="Asignar Cupos"><i class="fa fa-plus"></i>&nbsp; Asignar</button>'
+						].join('');
+				}
+				function iconosFila3(value, row, index) {
+						return [
+								'<button type="button" onclick="javascript:void(0)" class="btn btn-danger btn-sm qr" title="Generar QR"><i class="fa fa-qrcode"></i>&nbsp; QR</button>'
+						].join('');
+				}
+
+        window.accionesFila = {
+            'click .editar': function (e, value, row, index) {
+							$('#modal_editar').modal('show');
+							$('#eliminar').show();
+							$('#modalLabel_editar').html('Edita o elimina los cupos asignados');
+							$.ajax({
+									url: 'inc/cupos-proveedores-data.php?q=ver_cupos_editar&id_cupo='+row.id_cupo,
+									dataType: 'json',type: 'post',contentType: 'application/x-www-form-urlencoded',data: row.id_cupo,
+									beforeSend: function(){NProgress.start();},
+									success: function (json){
+										var maximo_cupo = parseInt(row.cantidad)+parseInt(json.cantidad);
+										$('#aviso_cupos').html('CUPO N° '+row.id_cupo+' Disponible: '+json.cantidad+'      / Maximo valor: '+maximo_cupo );
+										$("#cantidad_editar").attr({"max" : maximo_cupo,"min" : 1});
+										NProgress.done();
+
+
+									},
+									error: function (jqXhr) {
+											alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+									}
+								});
+							$("#hidden_id_cupo_editar").val(row.id_cupo);
+							$("#hidden_id_cupo_proveedor_editar").val(row.id_cupos_proveedor);
+							$("#hidden_id_cliente_editar").val(row.id_cliente);
+							$("#hidden_cantidad_original").val(row.cantidad);
+							$("#cantidad_editar").val(row.cantidad);
+
+							$proveedor_editar.select2('trigger', 'select', {
+								data: { id: row.id_proveedor, text: row.proveedor }
+							});
+
+							if (row.repetir=='si') {
+								$("#repetir_asignacion_boton_editar").click();
+							}else {
+								$("#repetir_asignacion_boton_cancelar_editar").click();
+							}
+							var fecha_nueva = fechaMYSQLx(row.repetir_hasta);
+							$("#repetir_editar").val(fecha_nueva);
+            }
+        }
+
+				window.accionesFila2 = {
+						'click .asignar': function (e, value, row, index) {
+							$('#modalLabel_asignar').html('Cupos disponibles para asignar: '+row.cantidad);
+							$('#modal_asignar').modal('show');
+							$("#cantidad").attr({"max" : row.cantidad,"min" : 1});
+							$("#hidden_id_cupo").val(row.id_cupo);
+							$("#hidden_id_cliente").val(localStorage.getItem("id_cliente"));
+							var_cantidad=row.cantidad;
+						}
+				}
+
+				window.accionesFila3 = {
+						'click .qr': function (e, value, row, index) {
+							$('#modal_qr').modal('show');
+							$('#qrcode').html('');
+							var id_cupos_proveedor = row.id_cupos_proveedor;
+							var url='consulta.html?q=ver_datos&id_cupos_proveedor='+id_cupos_proveedor;
+							var url_codificada = encodeURI(url);
+							var qrcode = new QRCode(document.getElementById("qrcode"), {
+							text: url_codificada,
+							width: 256,
+							height: 256,
+							colorDark : "#000000",
+							colorLight : "#ffffff",
+							correctLevel : QRCode.CorrectLevel.Q
+							});
+
+
+						}
+				}
+
+        //TOOLTIP EN COLUMNAS TRUNCADAS
+        $('#tabla').on('mouseenter', ".verTooltip", function () {
+            var $this = $(this);
+            $this.attr('title', $this.text());
+        });
+				//TOOLTIP EN COLUMNAS TRUNCADAS
+				$('#tabla_cupos').on('mouseenter', ".verTooltip", function () {
+						var $this = $(this);
+						$this.attr('title', $this.text());
+				});
+
+        //CSS PARA TRUNCAR COLUMNAS MUY LARGAS
+        function truncarColumna(value,row,index, field){
+          return {
+            classes: 'verTooltip',
+            css: {"max-width": "150px" , "white-space": "pre", "overflow": "hidden", "text-overflow": "ellipsis"}
+          };
+        }
+
+        $("#tabla").bootstrapTable({
+            mobileResponsive: true,
+						height: $(window).height()-90,
+						pageSize: Math.floor(($(window).height()-90)/50),
+            sortName: "id_cupos_proveedor",
+            sortOrder: 'desc',
+            trimOnSearch: false,
+            columns: [
+                [
+									{	field: 'id_cupo', align: 'left', valign: 'middle', title: 'Cupo Nro', sortable: true, visible: true },
+									{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'ID cupo/proveedor', sortable: true, visible: false },
+									{	field: 'id_usuario', align: 'left', valign: 'middle', title: 'ID Usuario', sortable: true, visible: false },
+									{	field: 'usuario', align: 'left', valign: 'middle', title: 'Usuario', sortable: true, visible: false },
+									{	field: 'id_cliente', align: 'left', valign: 'middle', title: 'ID Cupo', sortable: true, visible: false },
+									{	field: 'cliente', align: 'left', valign: 'middle', title: 'Cliente', sortable: true, visible: true },
+									{	field: 'id_proveedor', align: 'left', valign: 'middle', title: 'ID Proveedor', sortable: true, visible: false },
+									{	field: 'proveedor', align: 'left', valign: 'middle', title: 'Proveedor', sortable: true, visible: true },
+									{	field: 'fecha', align: 'center', valign: 'middle', title: 'Fecha', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'fecha_fin', align: 'center', valign: 'middle', title: 'Fecha Tope', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'puerto', align: 'left', valign: 'middle', title: 'Puerto', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'cantidad', align: 'center', valign: 'middle', title: 'Cupos Asignados', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'repetir', align: 'center', valign: 'middle', title: 'Repetir', sortable: true, cellStyle: truncarColumna, visible: false	},
+									{	field: 'repetir_hasta', align: 'center', valign: 'middle', title: 'Programación', sortable: true, cellStyle: truncarColumna	 },
+									{	field: 'editar', align: 'center', valign: 'middle', title: 'Editar', sortable: false, events: accionesFila,  formatter: iconosFila	},
+									//{	field: 'qr', align: 'center', valign: 'middle', title: 'Generar QR', sortable: false, events: accionesFila3,  formatter: iconosFila3	}
+                ]
+            ]
+        });
+
+
+				$("#tabla_cupos").bootstrapTable({
+						// mobileResponsive: true,
+						height: $(window).height()-90,
+						pageSize: Math.floor(($(window).height()-90)/50),
+						sortName: "id_cupo",
+						sortOrder: 'desc',
+						trimOnSearch: false,
+						columns: [
+								[
+									{	field: 'id_cupo', align: 'left', valign: 'middle', title: 'Cupo Nro', sortable: true, visible: true },
+									{	field: 'id_cliente', align: 'left', valign: 'middle', title: 'ID Cupo', sortable: true, visible: false },
+									{	field: 'cliente', align: 'left', valign: 'middle', title: 'Cliente', sortable: true, visible: false },
+									{	field: 'puerto', align: 'left', valign: 'middle', title: 'Puerto', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'fecha', align: 'center', valign: 'middle', title: 'Fecha', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'fecha_fin', align: 'center', valign: 'middle', title: 'Fecha Final', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'cantidad', align: 'center', valign: 'middle', title: 'Cupos Disponibles', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'asignar', align: 'center', valign: 'middle', title: 'Asignar Cupos', sortable: false, events: accionesFila2,  formatter: iconosFila2	}
+								]
+						]
+				});
+
+        //Altura de tabla automatica
+        $(document).ready(function () {
+            $(window).bind('resize', function(e)
+                {
+                  if (window.RT) clearTimeout(window.RT);
+                  window.RT = setTimeout(function()
+                  {
+                    $("#tabla").bootstrapTable('refreshOptions', {
+                        height: $(window).height()-90,
+                        pageSize: Math.floor(($(window).height()-90)/50),
+                    });
+                  }, 100);
+                });
+        });
+
+        $('#agregar').click(function(){
+            $('#modalLabel').html('Tabla de cupos disponibles para asignar');
+            $('#formulario').attr('action', 'cargar');
+						$('#tabla_cupos').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver_cupos&id_cliente='+localStorage.getItem("id_cliente")});
+        });
+
+				$('#repetir_asignacion_boton').click(function(){
+					$('#repetir_asignacion_div').show();
+					$('#repetir_asignacion_boton').hide();
+					$('#repetir_asignacion_boton_cancelar').show();
+					$('#repetir').attr('required');
+					$('#hidden_repetir').val('si');
+					$('#repetir_asignacion_boton_cancelar').attr('required');
+					$('#repetir').val('');
+
+				});
+
+				$('#repetir_asignacion_boton_cancelar').click(function(){
+						$('#repetir_asignacion_div').hide();
+						$('#repetir_asignacion_boton_cancelar').hide();
+						$('#repetir_asignacion_boton').show();
+						$('#repetir').removeAttr('required');
+						$('#hidden_repetir').val('no');
+						$('#repetir').val('');
+				});
+
+
+				$('#repetir_asignacion_boton_editar').click(function(){
+					$('#repetir_asignacion_div_editar').show();
+					$('#repetir_asignacion_boton_editar').hide();
+					$('#repetir_asignacion_boton_cancelar_editar').show();
+					$('#repetir_editar').attr('required');
+					$('#hidden_repetir_editar').val('si');
+					$('#repetir_asignacion_boton_cancelar_editar').attr('required');
+					$('#repetir_editar').val('');
+
+				});
+
+				$('#repetir_asignacion_boton_cancelar_editar').click(function(){
+						$('#repetir_asignacion_div_editar').hide();
+						$('#repetir_asignacion_boton_cancelar_editar').hide();
+						$('#repetir_asignacion_boton_editar').show();
+						$('#repetir_editar').removeAttr('required');
+						$('#hidden_repetir_editar').val('no');
+						$('#repetir_editar').val('');
+				});
+
+
+
+        $('#modal_principal').on('show.bs.modal', function (e) {
+            if ($('#formulario').attr('action')=="cargar"){
+                limpiarModal(e);
+                $('#eliminar').hide();
+
+            }
+        });
+
+        $('#modal_principal').on('shown.bs.modal', function (e) {
+            $("form input[type!='hidden']:first").focus();
+        });
+
+        $(".modal-dialog").draggable({
+            handle: ".modal-header"
+        });
+
+        function limpiarModal(){
+            $(document).find('form').trigger('reset');
+        }
+
+
+        //GUARDAR NUEVO REGISTRO O CAMBIOS EDITADOS
+        $("#formulario_asignar").submit(function(e){
+            e.preventDefault();
+            var data = $(this).serializeArray();
+						var_cantidad=var_cantidad-$('#cantidad').val();
+						if (var_cantidad==0) {
+							data.push({name: 'agotado', value: 'si'});
+						}else {
+							data.push({name: 'agotado', value: 'no'});
+
+
+						}
+            //data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
+            $.ajax({
+                url: 'inc/cupos-proveedores-data.php?q=asignar_cupos',
+                dataType: 'html',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                data: data,
+                beforeSend: function(){
+                    NProgress.start();
+
+                },
+                success: function(datos, textStatus, jQxhr){
+                    NProgress.done();
+                    var n = datos.toLowerCase().indexOf("error");
+                    if (n == -1) {
+											$('#modal_asignar').modal('hide');
+											$('#modal_principal').modal('hide');
+                        alertDismissJS(datos, "ok");
+												$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+												$('#tabla_cupos').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver_cupos'});
+                    }else{
+                        alertDismissJS(datos, "error");
+                    }
+                },
+                error: function(jqXhr, textStatus, errorThrown){
+                    NProgress.done();
+                    alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                }
+            });
+        });
+
+				$("#formulario_editar").submit(function(e){
+						e.preventDefault();
+						var data = $(this).serializeArray();
+						//data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
+						$.ajax({
+								url: 'inc/cupos-proveedores-data.php?q=editar_cupos',
+								dataType: 'html',
+								type: 'post',
+								contentType: 'application/x-www-form-urlencoded',
+								data: data,
+								beforeSend: function(){
+										NProgress.start();
+								},
+								success: function(datos, textStatus, jQxhr){
+										NProgress.done();
+										var n = datos.toLowerCase().indexOf("error");
+										if (n == -1) {
+											//$('#modal_editar').modal('hide');
+												alertDismissJS(datos, "ok");
+												$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+												$('#tabla_cupos').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver_cupos'});
+												$('#modal_editar').modal('hide');
+
+										}else{
+												alertDismissJS(datos, "error");
+										}
+								},
+								error: function(jqXhr, textStatus, errorThrown){
+										NProgress.done();
+										alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+								}
+						});
+				});
+
+
+        //ELIMINAR
+        $('#eliminar').click(function(){
+            var nombre = $("#hidden_id_cupo_proveedor_editar").val();
+            swal({
+                title: "¿Eliminar Cupo Nro: "+nombre+"?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "var(--primary)",
+                confirmButtonText: "Eliminar",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            }, function(){
+                $.ajax({
+                    dataType: 'html',
+                    async: false,
+                    type: 'POST',
+                    url: 'inc/cupos-proveedores-data.php',
+                    cache: false,
+                    data: {q: 'eliminar', id: $("#hidden_id_cupo_proveedor_editar").val(), nombre: $("#hidden_id_cupo_proveedor_editar").val() },
+                    beforeSend: function(){
+                        NProgress.start();
+                    },
+                    success: function (data, status, xhr) {
+                        var n = data.toLowerCase().indexOf("error");
+                        if (n == -1) {
+                            $('#modal_editar').modal('hide');
+                            swal.close();
+                            alertDismissJS(data, "ok");
+                            NProgress.done();
+                            $('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+                        }else{
+                            alertDismissJS(data, "error");
+                        }
+                    },
+                    error: function (jqXhr) {
+                        alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                    }
+                });
+            });
+        });
+
+
+        //AL PERDER EL FOCO Y SI EL MODAL ESTÁ VISIBLE
+        // $('#ruc').blur(function(){
+        //     if ($('#modal_principal').is(':visible')){
+        //         buscarRUC();
+        //     }
+        // });
+
+        function buscarRUC(){
+            if ($("#ruc").val()){
+                $.ajax({
+                    dataType: 'json', async: true, cache: false, url: 'inc/cupos-proveedores-data.php', timeout:10000, type: 'POST', data: {q:'buscar_ruc', ruc: $("#ruc").val()},
+                    beforeSend: function(){
+                        $("#spin_ruc").show();
+                    },
+                    success: function (json){
+                        if(json.ruc){
+                            $("#spin_ruc").hide();
+                            $('#ruc').val(json.ruc+"-"+json.dv);
+                            $('#razon_social').val(json.razon_social);
+                            $('#telefono').val(json.telefono);
+                            $('#direccion').val(json.direccion);
+                        }else{
+                            buscarCI();
+                        }
+                    },
+                    error: function (jqXhr) {
+                        $("#spin_ruc").hide();
+                        alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                    }
+                });
+            }
+        }
+
+        function buscarCI(){
+            $.ajax({
+                dataType: 'json', async: true, cache: false, url: 'inc/cupos-proveedores-data.php', timeout:10000, type: 'POST', data: {q:'buscar_ci', ci: $("#ruc").val()},
+                beforeSend: function(){
+                    $("#spin_ruc").show();
+                },
+                success: function (json){
+                    $("#spin_ruc").hide();
+                    $('#razon_social').val(json.nombre);
+                    $('#telefono').val("");
+                    $('#direccion').val("");
+                },
+                error: function (jqXhr) {
+                    $("#spin_ruc").hide();
+                    alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                }
+            });
+        }
+
+				$('#usuario').on('keyup change', function (e) {
+					$('#contraseña').val($('#usuario').val().trim());
+				});
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function proveedor() {
+					$proveedor = $('#proveedor').select2({
+			            dropdownParent: $("#modal_asignar"),
+			            placeholder: 'Buscar Proveedor',
+			            language: "es",
+			            theme: "bootstrap4",
+			            width: 'style',
+			            allowClear: true,
+			            selectOnClose: false,
+			            dropdownPosition: 'below',
+			            //minimumInputLength: 2,
+			            //minimumResultsForSearch: 5,
+			            ajax: {
+			                url: 'inc/cupos-proveedores-data.php',
+			                dataType: 'json',
+			                delay: 50,
+			                data: function(params) {
+			                    return { q: 'buscar_proveedor', term: params.term, page: params.page || 1 }
+			                },
+			                processResults: function(data, params) {
+			                    params.page = params.page || 1;
+			                    return {
+			                        results: $.map(data, function(obj) { return { id: obj.id_proveedor, text: obj.nombre }; }),
+			                        pagination: { more: (params.page * 5) <= data[0].total_count }
+			                    };
+			                },
+			                cache: true
+			            }
+			        });
+				}
+				proveedor();
+
+				function proveedor_editar() {
+					$proveedor_editar = $('#proveedor_editar').select2({
+									dropdownParent: $("#modal_editar"),
+									placeholder: 'Buscar Proveedor',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/cupos-proveedores-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_proveedor', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_proveedor, text: obj.nombre }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				proveedor_editar();
+
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function puertos() {
+					$puertos = $('#puertos').select2({
+									dropdownParent: $("#modal_principal"),
+									placeholder: 'Buscar Puerto',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/cupos-proveedores-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_puertos', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_puerto, text: obj.puerto }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				puertos();
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function clientes() {
+					$clientes = $('#clientes').select2({
+									dropdownParent: $("#modal_principal"),
+									placeholder: 'Buscar Clientes',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/cupos-proveedores-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_clientes', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_cliente, text: obj.razon_social }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				clientes();
+
+				function printDiv(contenido) {
+
+						var ficha = document.getElementById(contenido);
+						var ventanaImpresion = window.open(' ', 'Imprimir QR', 'width=900,height=620,scrollbars=NO');
+
+						ventanaImpresion.document.write(ficha.innerHTML);
+						ventanaImpresion.document.close();
+						ventanaImpresion.print();
+						ventanaImpresion.close();
+
+				// var qr = document.getElementById('qrcode2').innerHTML = '';
+				// $('#modal_codigo_qr').modal('hide');
+				}
+
+				$('#ver_agotados').click(function(){
+					$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver_agotados&id_cliente='+localStorage.getItem("id_cliente")});
+					$('#ver_agotados').hide();
+					$('#ocultar_agotados').show();
+
+					$('#ver_vencidos').show();
+					$('#ocultar_vencidos').hide();
+				});
+				$('#ocultar_agotados').click(function(){
+					$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+					$('#ver_agotados').show();
+					$('#ocultar_agotados').hide();
+				});
+
+				$('#ver_vencidos').click(function(){
+					$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver_vencidos&id_cliente='+localStorage.getItem("id_cliente")});
+					$('#ver_vencidos').hide();
+					$('#ocultar_vencidos').show();
+
+					$('#ver_agotados').show();
+					$('#ocultar_agotados').hide();
+				});
+				$('#ocultar_vencidos').click(function(){
+					$('#tabla').bootstrapTable('refresh', {url: 'inc/cupos-proveedores-data.php?q=ver&id_cliente='+localStorage.getItem("id_cliente")});
+					$('#ver_vencidos').show();
+					$('#ocultar_vencidos').hide();
+				});
+
+    </script>
+</body>
+</html>

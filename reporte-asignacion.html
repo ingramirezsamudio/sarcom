@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Reporte de Asignación - SARCOM</title>
+	<style type="text/css">
+		:root {
+      --blue: #009efb;
+      --indigo: #6610f2;
+      --purple: #7460ee;
+      --pink: #e83e8c;
+      --red: #f62d51;
+      --orange: #fb9678;
+      --yellow: #ffbc34;
+      --green: #36bea6;
+      --teal: #20c997;
+      --cyan: #01c0c8;
+      --white: #fff;
+      --gray: #6c757d;
+      --gray-dark: #343a40;
+      --blue: #009efb;
+      --indigo: #6610f2;
+      --purple: #7460ee;
+      --pink: #e83e8c;
+      --red: #f62d51;
+      --orange: #fb9678;
+      --yellow: #ffbc34;
+      --green: #36bea6;
+      --teal: #20c997;
+      --cyan: #01c0c8;
+      --white: #fff;
+      --gray: #6c757d;
+      --secondary: #f8f9ff;
+      --success: #006666;
+      --success_hover: #004040;
+      --info: #007f2d;
+      --warning: #d16901;
+      --warning_hover: #a35201;
+      --default: #949494;
+      --default_hover: #7e7e7e;
+      --danger: #c72344;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --cyan: #01c0c8;
+      --purple: #7460ee;
+      --primary: #102a83;
+      --primary_hover: #00732d;
+			--focus: 0 0 0 2px rgba(84,38,147,0.3);
+			--breakpoint-xs: 0;
+			--breakpoint-sm: 576px;
+			--breakpoint-md: 768px;
+			--breakpoint-lg: 992px;
+			--breakpoint-xl: 1600px;
+			--font-family-sans-serif: 'Rubik', sans-serif;
+			--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+		}
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+
+	<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+	<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+	<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="dist/js/qrcode.js" type="text/javascript" ></script>
+
+	<script type="text/javascript" src="dist/js/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="dist/js/daterangepicker/daterangepicker.js"></script>
+	<link rel="stylesheet" type="text/css" href="dist/js/daterangepicker/daterangepicker.css" />
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+    	<!--include topbar -->
+    	<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<!-- ============================================================== -->
+				<!-- Logo -->
+				<!-- ============================================================== -->
+				<!--<div class="navbar-header">
+					<a class="navbar-brand" href="index">
+						<b><img src="<?php echo $logo_icono; ?>" alt="homepage" class="dark-logo" /></b>
+						<span>
+							<img src="<?php echo $logo_texto; ?>" alt="homepage" class="dark-logo" />
+							<img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+						</span>
+					</a>
+				</div>-->
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+							<form class="app-search">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+							</form>
+						</li>-->
+						<li class="nav-item">
+							<span class="titulo">Reporte de Asignación</span>
+						</li>
+					</ul>
+					<!-- <?php //echo $menu_central; ?> -->
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 id="nombre_usuario" class="m-b-0">Usuario</h4>
+										<!--<p class=" m-b-0">varun@gmail.com</p>-->
+									</div>
+								</div>
+								<!--<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>-->
+								<!-- <a class="dropdown-item" href="<?php echo url();?>/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</a> -->
+								<!--<div class="dropdown-divider"></div>
+								<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>-->
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="aa"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-12">
+						<div id="toolbar">
+							<div class="form-inline" role="form">
+								<div class="form-row">
+									<div class="form-group mr-3">
+										&nbsp;&nbsp;<label class="pr-2" for="fechas">Fechas: </label>
+										<input type="hidden" id="desde">
+										<input type="hidden" id="hasta">
+										<div id="fechas" class="btn btn-default form-control">
+											<i class="glyphicon glyphicon-calendar fas fa-calendar-alt"></i>&nbsp;
+											<span></span><i class="ml-2 mr-1 fas fa-chevron-down"></i>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<button id="descargar_reporte" type="button" class="btn btn-primary">Descargar PDF</button>
+									</div>
+									<div class="form-group ml-1">
+										<button id="descargar_reporte_excel" type="button" class="btn btn-info">Descargar Excel</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div id="cabecera" class="form-row">
+							<div class="form-group col-md-3 col-sm-6">
+								<label class='pr-2' for='cliente'>Selecciona cliente: </label>
+								<select id='cliente' name='cliente' class='form-control'></select>
+							</div>
+
+              <div id="usuario_final_div" class="form-group col-md-4 col-sm-6">
+								<label class='pr-2' for='usuario_final'>Selecciona Usuario final: </label>
+								<select id='usuario_final' name='usuario_final' class='form-control'></select>
+              </div>
+
+							<div class="form-group col-md-3 col-sm-6">
+								<label class='pr-2' for='estado'>Estado de Cupo: </label>
+
+								<select class="form-control" name="estado" id="estado">
+									<option value="TODO">Todos</option>
+									<option value="DISPONIBLE">Disponibles</option>
+									<option value="AGOTADO">Agotados</option>
+								</select>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-12">
+						<table id="tabla" data-toolbar="#toolbar" data-show-export="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed-sm" data-striped="true" data-icons="icons" data-show-fullscreen="true"></table>
+					</div>
+
+
+
+
+					<div style="overflow-y: auto;" class="modal fade" id="modal_asignar" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="modalLabel_asignar">Detalles del Cupo</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<form class="form" id="formulario_asignar" method="post" enctype="multipart/form-data" action="">
+									<input type="hidden" name="hidden_id_cupo" id="hidden_id_cupo">
+									<input type="hidden" name="hidden_id_cliente" id="hidden_id_cliente">
+									<div class="modal-body">
+										<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div class="form-row">
+													<div class="col-md-12 col-sm-12">
+														<table id="tabla_cupos" data-url="" data-toolbar="#toolbar2" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons"></table>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button id="eliminar" type="button" class="btn btn-danger mr-auto" style="display:none">Eliminar</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+										<button type="button" id="descargar_reporte_cupos" class="btn btn-primary">Imprimir</button>
+										<button type="button" id="descargar_reporte_cupos_excel" class="btn btn-info">Exportar</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+
+										<div style="overflow-y: auto;" class="modal fade" id="modal_tickets" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="modalLabel_tickets">Detalles del Cupo Asignado</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<form class="form" id="formulario_tickets" method="post" enctype="multipart/form-data" action="">
+														<input type="hidden" name="hidden_id_cupo2" id="hidden_id_cupo2">
+														<input type="hidden" name="hidden_id_cliente2" id="hidden_id_cliente2">
+														<input type="hidden" name="hidden_id_cupo_proveedor" id="hidden_id_cupo_proveedor">
+
+														<div class="modal-body">
+															<div class="row">
+																<div class="col-md-12 col-sm-12">
+																	<div class="form-row">
+																		<div class="col-md-12 col-sm-12">
+																			<table id="tabla_tickets" data-url="" data-toolbar="#toolbar3" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons"></table>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+															<button type="button" id="descargar_reporte_tickets" class="btn btn-primary">Imprimir</button>
+															<button type="button" id="descargar_reporte_tickets_excel" class="btn btn-info">Exportar</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+
+
+
+                </div><!-- End Page Content -->
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+    </div><!-- End Wrapper -->
+<script type="text/javascript">
+$(document).ready( function () {
+	//verificar login
+	if (localStorage.getItem("id_usuario")) {
+		console.log('esta logueado');
+		//location.replace("inicio.html");
+	}else {
+		console.log('NO esta logueado');
+		location.replace("login.html");
+	}
+
+	//definir tipo de usuario
+	if (localStorage.getItem("tipo_usuario")=='superadmin') {
+		tipo_usuario = 'superadmin';
+	}else if (localStorage.getItem("tipo_usuario")=='admin') {
+		tipo_usuario = 'admin';
+	}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+		tipo_usuario = 'proveedor';
+	}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+		tipo_usuario = 'cliente';
+		$("#cabecera").hide();
+		console.log(localStorage.getItem("id_cliente"));
+
+	}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+		tipo_usuario = 'encargado';
+	}
+	else {
+		tipo_usuario = 'visitante';
+	};
+
+	$('#nombre_usuario').html(localStorage.getItem("nombre_usuario"));
+
+	//ajax para el leftbar
+	$.ajax({
+		dataType: 'html',
+		async: true,
+		type: 'POST',
+		url: 'inc/leftbar-data.php',
+		cache: false,
+		data: {q: tipo_usuario},
+		success: function (data, status, xhr) {
+			var n = data.toLowerCase().indexOf("error");
+			if (n == -1) {
+				$('#sidebarnav').html(data);
+				cargarScriptMenu();
+			}else{
+				alertDismissJS(data, "error");
+			}
+		},
+		error: function (jqXhr) {
+			alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+		}
+	});
+
+$('#usuario_final_div').hide();
+
+
+
+
+
+
+
+
+});
+
+function cargarScriptMenu() {
+	let scriptActual = document.getElementById('script');
+	let nuevoScript = document.createElement('script');
+	nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+	document.head.replaceChild(nuevoScript, scriptActual);
+}
+
+
+function logout(){
+		localStorage.clear();
+		sessionStorage.clear();
+		location.replace('login.html');
+}
+
+	//Altura de tabla automatica
+	$(document).ready(function () {
+
+		//CALENDARIO
+		var fechaIni;
+			var fechaFin;
+
+			function cb(start, end) {
+				fechaIni = start.format('DD/MM/YYYY');
+				fechaFin = end.format('DD/MM/YYYY');
+				$('#fechas span').html(start.format('DD/MM/YYYY') + ' al ' + end.format('DD/MM/YYYY'));
+
+				$("#desde").val(fechaMYSQL(fechaIni));
+				$("#hasta").val(fechaMYSQL(fechaFin));
+			}
+
+			cb(moment().startOf('month'), moment().endOf('month'));
+
+			$('#fechas').daterangepicker({
+				timePicker: false,
+				opens: "right",
+				format: 'DD/MM/YYYY',
+				locale: {
+					applyLabel: 'Aplicar',
+					cancelLabel: 'Borrar',
+					fromLabel: 'Desde',
+					toLabel: 'Hasta',
+					customRangeLabel: 'Personalizado',
+					daysOfWeek: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi','Sa'],
+					monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"],
+					firstDay: 1
+				},
+				ranges: {
+				    'Hoy': [moment(), moment()],
+				    'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+				    'Este Mes': [moment().startOf('month'), moment().endOf('month')]
+				}
+			}, cb);
+
+			$('#fechas').on('apply.daterangepicker', function(ev, picker) {
+				fechaIni = picker.startDate.format('DD/MM/YYYY');
+				fechaFin = picker.endDate.format('DD/MM/YYYY');
+				$("#desde").val(picker.startDate.format('YYYY-MM-DD'));
+				$("#hasta").val(picker.endDate.format('YYYY-MM-DD'));
+
+				$('#fechas').change();
+			});
+			//FIN CALENDARIO
+
+			$('#fechas').change();
+
+			$(window).bind('resize', function(e)
+			{
+			  if (window.RT) clearTimeout(window.RT);
+			  window.RT = setTimeout(function()
+			  {
+				$("#tabla").bootstrapTable('refreshOptions', {
+					height: $(window).height()-90,
+					pageSize: Math.floor(($(window).height()-90)/55),
+				});
+			  }, 100);
+			});
+	});
+
+	// $('#fecha').change(function() {
+	// 	let fecha_solicitada = this.value;
+	// 	$('#tabla').bootstrapTable('refresh', {url: 'inc/reparto_mensual-data.php?q=filtrar_fecha&fecha='+fecha_solicitada});
+	// });
+
+	$('#fechas').change(function () {
+        let desde = $("#desde").val();
+        let hasta= $("#hasta").val();
+        let id_proveedor = $(('#proveedor')).val();
+        let ruc_usuario_final = $('#usuario_final').val();
+				let id_cliente = $('#cliente').val();
+				let estado = $('#estado').val();
+				let estado_ticket = $('#estado_ticket').val();
+
+        var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente + '&id_proveedor='+id_proveedor + '&estado_ticket='+estado_ticket+ '&estado='+estado+ '&id_clientex='+localStorage.getItem("id_cliente");
+
+        $('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+        setTimeout(function () {
+            $("#tabla").bootstrapTable('resetView');
+            $("#tabla").bootstrapTable('resetWidth');
+        },50);
+
+	});
+
+	function iconosFila(value, row, index) {
+			return [
+					'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm ver_cupos_proveedor" title="Cupos asignados a Proveedores"><i class="fa fa-search"></i>&nbsp;</button>'
+			].join('');
+	}
+	function iconosFila2(value, row, index) {
+			return [
+					'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm ver_tickets" title="Tickets asignados a Choferes"><i class="fa fa-search"></i>&nbsp;</button>'
+			].join('');
+	}
+
+	window.accionesFila = {
+			'click .ver_cupos_proveedor': function (e, value, row, index) {
+				$('#modal_asignar').modal('show');
+				$('#modalLabel_asignar').html('Cupo Nro: <b>'+row.id_cupo+'</b> Asignado al cliente <b>"'+row.cliente+'"</b>');
+				$('#tabla_cupos').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver_cupos_proveedor&id_cupo='+row.id_cupo});
+				$("#hidden_id_cupo").val(row.id_cupo);
+			}
+	}
+	window.accionesFila2 = {
+			'click .ver_tickets': function (e, value, row, index) {
+				$('#modal_asignar').modal('hide');
+				$('#modal_tickets').modal('show');
+				$('#modalLabel_tickets').html('Tickets Creados');
+				$('#tabla_tickets').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver_tickets&id_cupos_proveedor='+row.id_cupos_proveedor});
+				$('#hidden_id_cupo_proveedor').val(row.id_cupos_proveedor);
+			}
+	}
+
+    $("#tabla").bootstrapTable({
+		mobileResponsive: true,
+		height: $(window).height()-90,
+		pageSize: Math.floor(($(window).height()-90)/50),
+		sortName: "id_cupo",
+		sortOrder: 'desc',
+		trimOnSearch: false,
+		columns: [
+			[
+				// id_cupo, id_cliente, id_puerto, fecha_inicio, fecha_fin, cantidad, estado, ruc, razon_social, puerto
+				{	field: 'id_ticket', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },
+				{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },
+				{	field: 'id_chofer', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },
+				{	field: 'id_cupo', align: 'left', valign: 'middle', title: 'Cupo Nro', sortable: true, visible: true },
+				{	field: 'id_proveedor', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },
+				{	field: 'id_cliente', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },
+				{	field: 'id_puerto', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: false },				//cupo
+				{	field: 'puerto', align: 'left', valign: 'middle', title: 'Puerto', sortable: true },				//cliente
+				{	field: 'cliente', align: 'left', valign: 'middle', title: 'Cliente', sortable: true },
+				{	field: 'ruc_cliente', align: 'left', valign: 'middle', title: 'RUC Cliente', sortable: true },
+				{	field: 'telefono_cliente', align: 'left', valign: 'middle', title: 'Tel. Cliente', sortable: true , visible: false },
+				{	field: 'correo_cliente', align: 'center', valign: 'middle', title: 'Correo Cliente', sortable: true, visible: false  },
+				{	field: 'encargado_cliente', align: 'left', valign: 'middle', title: 'Encargado', sortable: true , visible: false },
+				{	field: 'fecha_inicio', align: 'center', valign: 'middle', title: 'Fecha Inicio', sortable: true },
+				{	field: 'fecha_fin', align: 'center', valign: 'middle', title: 'Fecha Fin', sortable: true },
+				{	field: 'estado_cupo', align: 'center', valign: 'middle', title: 'Estado del Cupo', sortable: true, formatter: colorEstado },
+				{	field: 'cantidad', align: 'center', valign: 'middle', title: 'Cant. Disponible', sortable: true },
+
+				{	field: 'ver_cupos_proveedor', align: 'center', valign: 'middle', title: 'Ver', sortable: false, events: accionesFila,  formatter: iconosFila, visible: true	}
+
+			]
+		]
+	});
+
+	$("#tabla_cupos").bootstrapTable({
+			// mobileResponsive: true,
+			height: $(window).height()-90,
+			pageSize: Math.floor(($(window).height()-90)/50),
+			sortName: "id_cupo",
+			sortOrder: 'desc',
+			trimOnSearch: false,
+			columns: [
+					[
+						// id_cupos_proveedor, id_cupo, id_proveedor, cantidad_asignada, estado_cupo_proveedor, fecha_inicio, fecha_fin, ruc_proveedor, proveedor
+						{	field: 'id_cupo', align: 'left', valign: 'middle', title: 'Cupo Nro', sortable: true, visible: false },
+						{	field: 'ruc_proveedor', align: 'center', valign: 'middle', title: 'Ruc del Prov', sortable: true	},
+						{	field: 'proveedor', align: 'center', valign: 'middle', title: 'Proveedor', sortable: true	},
+						{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'ID Cupo', sortable: true, visible: false },
+						{	field: 'id_proveedor', align: 'left', valign: 'middle', title: 'Cliente', sortable: true, visible: false },
+						{	field: 'cantidad_asignada', align: 'center', valign: 'middle', title: 'Cantidad Asignada', sortable: true, visible: true },
+						{	field: 'cantidad_disponible', align: 'center', valign: 'middle', title: 'Cantidad Disponible', sortable: true, visible: true },
+						{	field: 'estado_cupo_proveedor', align: 'left', valign: 'middle', title: 'Estado', sortable: true, formatter: colorEstado},
+						{	field: 'fecha_inicio', align: 'center', valign: 'middle', title: 'Fecha Inicio', sortable: true	},
+						{	field: 'fecha_fin', align: 'center', valign: 'middle', title: 'Fecha Fin', sortable: true	},
+
+						{	field: 'ver_tickets', align: 'center', valign: 'middle', title: 'Ver', sortable: false, events: accionesFila2,  formatter: iconosFila2	}
+					]
+			]
+	});
+
+
+	$("#tabla_tickets").bootstrapTable({
+			// mobileResponsive: true,
+			height: $(window).height()-90,
+			pageSize: Math.floor(($(window).height()-90)/50),
+			sortName: "id_cupo",
+			sortOrder: 'desc',
+			trimOnSearch: false,
+			columns: [
+					[
+						{	field: 'id_ticket', align: 'center', valign: 'middle', title: 'ID Ticket', sortable: true	, visible: false},
+						{	field: 'id_chofer', align: 'center', valign: 'middle', title: 'ID Chofer', sortable: true, visible: false	},
+						{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'ID Cupo Prov', sortable: true, visible: false },
+						{	field: 'cupo_nro', align: 'center', valign: 'middle', title: 'Cupo Nro', sortable: true	},
+						{	field: 'id_proveedor', align: 'center', valign: 'middle', title: 'ID Prov', sortable: true, visible: false },
+						{	field: 'proveedor', align: 'center', valign: 'middle', title: 'Proveedor', sortable: true	},
+						{	field: 'fecha_de_creacion', align: 'center', valign: 'middle', title: 'Fecha', sortable: true, visible: true },
+						{	field: 'chofer', align: 'center', valign: 'middle', title: 'Chofer', sortable: true	},
+						{	field: 'ci', align: 'center', valign: 'middle', title: 'CI', sortable: true	},
+						{	field: 'chapa', align: 'center', valign: 'middle', title: 'Chapa', sortable: true, visible: false },
+						{	field: 'telefono', align: 'center', valign: 'middle', title: 'Telefono', sortable: true	},
+						{	field: 'estado_ticket', align: 'center', valign: 'middle', title: 'Estado', sortable: true, formatter: colorEstado},
+					]
+			]
+	});
+
+
+
+
+
+
+	function iconosFila(value, row, index) {
+			return [
+					'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm ver_cupos_proveedor" title="Cupos asignados a proveedores"><i class="fa fa-search"></i>&nbsp;</button>'
+			].join('');
+	}
+
+
+
+	$('#tabla').on('load-success.bs.table', function (e) {
+		$("#tabla").bootstrapTable('resetView');
+		$("#tabla").bootstrapTable('resetWidth');
+	});
+
+
+    //CSS PARA TRUNCAR COLUMNAS MUY LARGAS
+	function truncarColumna(value,row,index, field){
+	  return {
+		classes: 'verTooltip',
+		css: {"max-width": "50px" , "white-space": "pre", "overflow": "hidden", "text-overflow": "ellipsis"}
+	  };
+	}
+
+    function colorEstado(data) {
+		switch (data) {
+			case 'PENDIENTE':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-danger"><i class="fas fa-hourglass-half my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+							 case 'AGOTADO':
+	                 return '<span style="text-transform: capitalize;" class="badge badge-pill badge-danger"><i class="fas fa-hourglass-end my-1 mx-1"></i>' + data + '</span></b>';
+	                 break;
+            case 'REPROGRAMADO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-info"><i class="fas fa-clock my-1 mx-1"></i> ' + data + '</span></b>';
+                break;
+            case 'DISPONIBLE':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-primary"><i class="fas fa-certificate my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+						case 'INICIADO':
+							 return '<span style="text-transform: capitalize;" class="badge badge-pill badge-info"><i class="fas fa-truck my-1 mx-1"></i> ' + data + '</span></b>';
+							break;
+			default:
+				return '<span style="text-transform: capitalize;" class="badge badge-pill badge-default"><i class="fas fa-ban my-1 mx-1"></i> ' + data + '</span></b>';
+
+        }
+    }
+
+
+    //SELECT DE cliente
+	    function cliente() {
+            $cliente = $('#cliente').select2({
+                dropdownParent: $("#toolbar"),
+                placeholder: 'Buscar cliente',
+                language: "es",
+                theme: "bootstrap4",
+                width: 'style',
+                allowClear: true,
+                selectOnClose: false,
+                dropdownPosition: 'below',
+                //minimumInputLength: 2,
+                //minimumResultsForSearch: 5,
+                ajax: {
+                    url: 'inc/cupos-data.php',
+                    dataType: 'json',
+                    delay: 50,
+                    data: function(params) {
+                        return { q: 'buscar_clientes', term: params.term, page: params.page || 1 }
+                    },
+                    processResults: function(data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: $.map(data, function(obj) { return { id: obj.id_cliente, text: obj.razon_social }; }),
+                            pagination: { more: (params.page * 5) <= data[0].total_count }
+                        };
+                    },
+                    cache: true
+                }
+            });
+        }
+        cliente();
+
+        $('#cliente').on('keyup change', function (e) {
+            let desde = $("#desde").val();
+            let hasta= $("#hasta").val();
+            let id_proveedor = $(('#proveedor')).val();
+            let id_cliente = $('#cliente').val();
+						let estado = $('#estado').val();
+						let estado_ticket = $('#estado_ticket').val();
+
+
+            var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente + '&id_proveedor='+id_proveedor+ '&estado_ticket='+estado_ticket+ '&estado='+estado+ '&id_clientex='+localStorage.getItem("id_cliente");
+
+            $('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+        });
+
+            //SELECT DE usuario_final
+	    function usuario_final() {
+            $usuario_final = $('#usuario_final').select2({
+                dropdownParent: $("#toolbar"),
+                placeholder: 'Buscar usuario final',
+                language: "es",
+                theme: "bootstrap4",
+                width: 'style',
+                allowClear: true,
+                selectOnClose: false,
+                dropdownPosition: 'below',
+                //minimumInputLength: 2,
+                //minimumResultsForSearch: 5,
+                ajax: {
+                    url: 'inc/reporte-asignacion-data.php',
+                    dataType: 'json',
+                    delay: 50,
+                    data: function(params) {
+                        return { q: 'buscar_usuario_final', term: params.term, page: params.page || 1 }
+                    },
+                    processResults: function(data, params) {
+						params.page = params.page || 1;
+                        return {
+							results: $.map(data, function(obj) { return { id: obj.id_usuario_final, text: obj.razon_social }; }),
+                            pagination: { more: (params.page * 5) <= data[0].total_count }
+                        };
+						console.log(data);
+                    },
+                    cache: true
+                }
+            });
+        }
+        usuario_final();
+
+        $('#usuario_final').on('keyup change', function (e) {
+            let desde = $("#desde").val();
+            let hasta= $("#hasta").val();
+            let id_proveedor = $(('#proveedor')).val();
+            let ruc_usuario_final = $('#usuario_final').val();
+            let id_cliente = $('#cliente').val();
+						let estado = $('#estado').val();
+						let estado_ticket = $('#estado_ticket').val();
+
+
+
+            var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente+ '&estado_ticket='+estado_ticket + '&estado='+estado + '&id_proveedor='+id_proveedor+ '&id_clientex='+localStorage.getItem("id_cliente");
+
+            $('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+
+        });
+
+        //SELECT DE proveedor
+	    function proveedor() {
+            $proveedor = $('#proveedor').select2({
+                dropdownParent: $("#toolbar"),
+                placeholder: 'Buscar proveedor',
+                language: "es",
+                theme: "bootstrap4",
+                width: 'style',
+                allowClear: true,
+                selectOnClose: false,
+                dropdownPosition: 'below',
+                //minimumInputLength: 2,
+                //minimumResultsForSearch: 5,
+                ajax: {
+                    url: 'inc/cupos-data.php',
+                    dataType: 'json',
+                    delay: 50,
+                    data: function(params) {
+                        return { q: 'buscar_proveedor', term: params.term, page: params.page || 1 }
+                    },
+                    processResults: function(data, params) {
+						params.page = params.page || 1;
+                        return {
+							results: $.map(data, function(obj) { return { id: obj.id_proveedor, text: obj.nombre }; }),
+                            pagination: { more: (params.page * 5) <= data[0].total_count }
+                        };
+						console.log(data);
+                    },
+                    cache: true
+                }
+            });
+        }
+        proveedor();
+
+        $('#proveedor').on('keyup change', function (e) {
+            let desde = $("#desde").val();
+            let hasta= $("#hasta").val();
+            let id_proveedor = $(('#proveedor')).val();
+            let ruc_usuario_final = $('#usuario_final').val();
+            let id_cliente = $('#cliente').val();
+						let estado = $('#estado').val();
+						let estado_ticket = $('#estado_ticket').val();
+
+
+
+            var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente + '&estado_ticket='+estado_ticket+ '&estado='+estado + '&id_proveedor='+id_proveedor+ '&id_clientex='+localStorage.getItem("id_cliente");
+
+            $('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+
+		});
+		$('#estado').on('keyup change', function (e) {
+				let desde = $("#desde").val();
+				let hasta= $("#hasta").val();
+				let id_proveedor = $(('#proveedor')).val();
+				let ruc_usuario_final = $('#usuario_final').val();
+				let id_cliente = $('#cliente').val();
+				let estado = $('#estado').val();
+				let estado_ticket = $('#estado_ticket').val();
+
+
+				var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente + '&estado_ticket='+estado_ticket+ '&estado='+estado + '&id_proveedor='+id_proveedor+ '&id_clientex='+localStorage.getItem("id_cliente");
+				$('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+});
+
+$('#estado_ticket').on('keyup change', function (e) {
+		let desde = $("#desde").val();
+		let hasta= $("#hasta").val();
+		let id_proveedor = $(('#proveedor')).val();
+		let ruc_usuario_final = $('#usuario_final').val();
+		let id_cliente = $('#cliente').val();
+		let estado = $('#estado').val();
+		let estado_ticket = $('#estado_ticket').val();
+
+
+		var param = '&desde='+desde + '&hasta='+hasta + '&id_cliente='+id_cliente + '&estado_ticket='+estado_ticket+ '&estado='+estado + '&id_proveedor='+id_proveedor+ '&id_clientex='+localStorage.getItem("id_cliente");
+		$('#tabla').bootstrapTable('refresh', {url: 'inc/reporte-asignacion-data.php?q=ver'+ param});
+});
+
+
+		$('#descargar_reporte').click(function() {
+            let desde = $("#desde").val();
+            let hasta= $("#hasta").val();
+						let id_cliente = $('#cliente').val();
+						let estado = $('#estado').val();
+            var param = {
+                'desde': desde,
+                'hasta': hasta,
+                'id_cliente': id_cliente,
+                'estado': estado
+            };
+            console.log(param);
+            OpenWindowWithPost("imprimir-reporte-asignacion.php", "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=yes,resizable=yes,width=850,height=620", 'ImprimirPDF',param);
+		});
+		$('#descargar_reporte_excel').click(function() {
+						window.location.replace("inc/reporte-asignacion-data.php?q=descargar_reporte_excel&desde="+$("#desde").val()+'&hasta='+$("#hasta").val()+'&id_cliente='+$("#cliente").val()+'&estado='+$("#estado").val());
+		});
+
+
+		$('#descargar_reporte_cupos').click(function() {
+						let desde = $("#desde").val();
+						let hasta= $("#hasta").val();
+						let id_cupo = $(('#hidden_id_cupo')).val();
+						var param = {
+								'desde': desde,
+								'hasta': hasta,
+								'id_cupo': id_cupo
+						};
+						console.log(param);
+						OpenWindowWithPost("imprimir-reporte-asignacion-cupos.php", "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=yes,resizable=yes,width=850,height=620", 'ImprimirPDF',param);
+		});
+		$('#descargar_reporte_cupos_excel').click(function() {
+						window.location.replace("inc/reporte-asignacion-data.php?q=descargar_reporte_cupos_excel&desde="+$("#desde").val()+'&hasta='+$("#hasta").val()+'&id_cupo='+$(('#hidden_id_cupo')).val());
+		});
+
+
+		$('#descargar_reporte_tickets').click(function() {
+						let desde = $("#desde").val();
+						let hasta= $("#hasta").val();
+						let id_cupo_proveedor = $(('#hidden_id_cupo_proveedor')).val();
+						var param = {
+								'desde': desde,
+								'hasta': hasta,
+								'id_cupo_proveedor': id_cupo_proveedor
+						};
+						console.log(param);
+						OpenWindowWithPost("imprimir-reporte-asignacion-tickets.php", "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=yes,resizable=yes,width=850,height=620", 'ImprimirPDF',param);
+		});
+		$('#descargar_reporte_tickets_excel').click(function() {
+						window.location.replace("inc/reporte-asignacion-data.php?q=descargar_reporte_tickets_excel&desde="+$("#desde").val()+'&hasta='+$("#hasta").val()+'&id_cupo_proveedor='+$(('#hidden_id_cupo_proveedor')).val());
+		});
+
+
+
+
+
+		$('#modal_tickets').on('hidden.bs.modal', function () {
+			$('#modal_asignar').modal('show');
+		})
+
+
+
+</script>
+</body>
+</html>

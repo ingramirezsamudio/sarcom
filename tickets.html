@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Tickets - Sarcom</title>
+	<style type="text/css">
+
+	:root {
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --gray-dark: #343a40;
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --secondary: #f8f9fa;
+	  --success: #006666;
+	  --success_hover: #004040;
+	  --info: #949494;
+	  --warning: #d16901;
+	  --warning_hover: #a35201;
+	  --default: #949494;
+	  --default_hover: #7e7e7e;
+	  --danger: #c72344;
+	  --light: #f8f9fa;
+	  --dark: #343a40;
+	  --cyan: #01c0c8;
+	  --purple: #7460ee;
+
+		--primary: #102a83;
+	  --primary_hover: #00732d;
+	  --focus: 0 0 0 2px rgba(84, 38, 147, 0.3);
+	  --breakpoint-xs: 0;
+	  --breakpoint-sm: 576px;
+	  --breakpoint-md: 768px;
+	  --breakpoint-lg: 992px;
+	  --breakpoint-xl: 1600px;
+	  --font-family-sans-serif: 'Rubik', sans-serif;
+	  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	};
+
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+
+	<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+	<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+	<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="dist/js/qrcode.js" type="text/javascript" ></script>
+	<script type="text/javascript" src="dist/js/daterangepicker/moment.min.js"></script>
+
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+    	<!--include topbar -->
+    	<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<li class="nav-item">
+							<span class="titulo">Asignación de Tickets</span>
+						</li>
+					</ul>
+					<!-- <?php //echo $menu_central; ?> -->
+					<ul class="navbar-nav my-lg-0">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 id="nombre_usuario" class="m-b-0">Usuario</h4>
+									</div>
+								</div>
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="aa"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+						<div id="toolbar">
+							<div class="form-inline" role="form">
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" id="agregar" data-toggle="modal" data-target="#modal_principal">Asignar Tickets</button>
+								</div>
+								<div class="form-group ml-1">
+									<button type="button" class="btn btn-info" id="imprimir_tickets">Imprimir Tickets</button>
+								</div>
+							</div>
+						</div>
+						<table id="tabla" data-toolbar="#toolbar" data-show-export="true" data-search="true" data-show-refresh="true" data-show-toggle="false" data-show-columns="true" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons" data-show-fullscreen="false"></table>
+
+        	<!-- MODAL primcipal -->
+						<div class="modal fade" id="modal_principal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel">Asignar Chofer y Generar Tickets</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form class="form" id="formulario" method="post" enctype="multipart/form-data" action="">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+													<div class="form-row">
+													<div class="col-md-12 col-sm-12">
+														<table id="tabla_cupos" data-toolbar="#toolbar2" data-show-export="false" data-search="true" data-show-refresh="false" data-show-toggle="false" data-show-columns="false" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed" data-striped="true" data-icons="icons" data-show-fullscreen="false"></table>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="modal fade" id="modal_asignar" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel_asignar">Definir el chofer y la chapa del vehiculo</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form class="form" id="formulario_asignar" method="post" enctype="multipart/form-data" action="">
+										<input type="hidden" name="hidden_id_cupos_proveedor" id="hidden_id_cupos_proveedor">
+										<input type="hidden" name="hidden_id_ticket" id="hidden_id_ticket">
+										<input type="hidden" name="hidden_id_usuario" id="hidden_id_usuario">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+													<div class="form-row">
+														<div class="form-group col-md-6 col-sm-12">
+																	<label for="chofer">Chofer</label>
+																			<select class="form-control input-sm select2" name="chofer" id="chofer" aria-label="button-direccion" ></select>
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+																	<label for="chapa">Chapa</label>
+																	<input onkeyup="this.value = this.value.toUpperCase();" class="form-control input-sm" id="chapa" name="chapa" type="text" autocomplete="off" >
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+																	<label for="fecha_chofer">Fecha</label>
+																	<input class="form-control input-sm" id="fecha_chofer" name="fecha_chofer" type="date" autocomplete="off" required>
+														</div>
+															<div id="cantidad_chofer_div" class="form-group col-md-6 col-sm-12">
+																		<label for="cantidad_chofer">Cantidad</label>
+																		<input class="form-control input-sm" id="cantidad_chofer" name="cantidad_chofer" type="number" required>
+															</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button id="eliminar" type="button" class="btn btn-danger mr-auto" style="display:none">Eliminar</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<!-- MODAL IMPRIMIR -->
+						<div class="modal fade" id="modal_imprimir" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel_imprimir">Imprimir Ticket</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form class="form" id="formulario_imprimir" method="post" enctype="multipart/form-data" action="">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+														<div id="divQR" style="" class="text-center">
+															<!-- prueba de QRcode.js -->
+															<div class="row text-center">
+															<div class="col-md-12 col-sm-12">
+																<h4><b>TICKET DE ENTRADA</b></h4>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h5 id="imprimir_puerto"></h5>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h5 id="imprimir_cliente"></h5>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h5 id="imprimir_proveedor"></h5>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h5 id="imprimir_fecha_de_creacion"></h5>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h4 id="imprimir_chapa"></h4>
+															</div>
+															<div class="col-md-12 col-sm-12">
+																<h4 id="imprimir_chofer"></h4>
+																<hr><br>
+															</div>
+														</div>
+															<div id="qrcode" style="display: flex; justify-content: center;"></div>
+														</div>
+													</div>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+											<button type="button" class="btn btn-primary" onclick="printDiv('divQR')">Imprimir</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+
+					</div><!-- End col-12 -->
+                </div><!-- End Page Content -->
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+       <!-- <?phpinclude 'footer.php'; ?> -->
+    </div><!-- End Wrapper -->
+    <script type="text/javascript">
+		$(document).ready( function () {
+			//verificar login
+			if (localStorage.getItem("id_usuario")) {
+				console.log('esta logueado');
+					$('#hidden_id_usuario').val(localStorage.getItem("id_usuario"));
+				//location.replace("inicio.html");
+			}else {
+				console.log('NO esta logueado');
+				location.replace("login.html");
+			}
+
+			//definir tipo de usuario
+			//definir tipo de usuario
+			if (localStorage.getItem("tipo_usuario")=='superadmin') {
+				tipo_usuario = 'superadmin';
+			}else if (localStorage.getItem("tipo_usuario")=='admin') {
+				tipo_usuario = 'admin';
+			}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+				tipo_usuario = 'proveedor';
+			}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+				tipo_usuario = 'cliente';
+			}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+				tipo_usuario = 'encargado';
+			}
+			else {
+				tipo_usuario = 'visitante';
+			};
+
+
+			//ajax para el leftbar
+			$.ajax({
+				dataType: 'html',
+				async: true,
+				type: 'POST',
+				url: 'inc/leftbar-data.php',
+				cache: false,
+				data: {q: tipo_usuario},
+				success: function (data, status, xhr) {
+					var n = data.toLowerCase().indexOf("error");
+					if (n == -1) {
+						$('#sidebarnav').html(data);
+						cargarScriptMenu();
+					}else{
+						alertDismissJS(data, "error");
+					}
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+			$('#nombre_usuario').html(localStorage.getItem("nombre_usuario"));
+			$('#tabla').bootstrapTable('refresh', {url: 'inc/tickets-data.php?q=ver&id_proveedor='+localStorage.getItem("id_proveedor")});
+
+			//fecha de hoy
+
+		});
+
+		//fin de onready
+
+		function cargarScriptMenu() {
+			let scriptActual = document.getElementById('script');
+			let nuevoScript = document.createElement('script');
+			nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+			document.head.replaceChild(nuevoScript, scriptActual);
+		}
+
+		function logout(){
+				localStorage.clear();
+				sessionStorage.clear();
+				location.replace('login.html');
+		}
+
+        /*$('.modal').on("hidden.bs.modal", function (e) { //fire on closing modal box
+            if ($('.modal:visible').length) { // check whether parent modal is opend after child modal close
+                $('body').addClass('modal-open'); // if open mean length is 1 then add a bootstrap css class to body of the page
+            }
+        });*/
+
+        function iconosFila(value, row, index) {
+            return [
+                '<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm editar" title="Editar datos"><i class="fa fa-edit"></i>&nbsp; Editar</button>'
+            ].join('');
+        }
+				function iconosFila2(value, row, index) {
+						return [
+								'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm asignar" title="Asignar Cupos"><i class="fa fa-plus"></i>&nbsp; Asignar</button>'
+						].join('');
+				}
+
+				function iconosFila3(value, row, index) {
+						return [
+								'<button type="button" onclick="javascript:void(0)" class="btn btn-info btn-sm imprimir" title="Imprimir Ticket"><i class="fa fa-print"></i>&nbsp; Imprimir</button>'
+						].join('');
+				}
+
+        window.accionesFila = {
+            'click .editar': function (e, value, row, index) {
+							$('#formulario_asignar').attr('action', 'editar_ticket');
+
+                $('#modalLabel_asignar').html('Editar asignacion de ticket');
+                $('#formulario').attr('action', 'editar');
+                $('#eliminar').show();
+								$('#modal_asignar').modal('show');
+								$('#cantidad_chofer_div').hide();
+								$('#cantidad_chofer').removeAttr('required');
+
+
+								$("#hidden_id_cupos_proveedor").val(row.id_cupos_proveedor);
+								$("#hidden_id_ticket").val(row.id_ticket);
+								$("#chapa").val(row.chapa);
+								$choferes.select2('trigger', 'select', {
+									data: { id: row.id_chofer, text: row.chofer }
+								});
+								var fecha_nueva = fechaMYSQLx(row.fecha_de_creacion)
+								console.log(fecha_nueva);
+								$("#fecha_chofer").val(fecha_nueva);
+								$("#cantidad").val(row.cantidad);
+            }
+        }
+
+				window.accionesFila2 = {
+						'click .asignar': function (e, value, row, index) {
+							$('#formulario_asignar').attr('action', 'cargar_ticket');
+							$('#cantidad_chofer_div').show();
+							$('#cantidad_chofer').attr('required');
+
+
+							var today = moment().format('YYYY-MM-DD');
+							$('#modalLabel_asignar').html('Crear Ticket - Disponibles: '+row.cantidad_disponible);
+							$("#cantidad_chofer").val('1')
+							$("#cantidad_chofer").attr({"max" : row.cantidad_disponible,"min" : 1});
+							$('#fecha_chofer').val(today);
+							$('#hidden_id_cupos_proveedor').val(row.id_cupos_proveedor);
+							$('#modal_asignar').modal('show');
+
+
+						}
+				}
+
+				window.accionesFila3 = {
+						'click .imprimir': function (e, value, row, index) {
+							$('#hidden_id_cupos_proveedor').val(row.id_cupos_proveedor);
+							$('#qrcode').html('');
+							var id_ticket = row.id_ticket;
+							var url='consulta.html?q=ver_datos&id_ticket='+id_ticket;
+							var url_codificada = encodeURI(url);
+							var qrcode = new QRCode(document.getElementById("qrcode"), {
+							text: url_codificada,
+							width: 256,
+							height: 256,
+							colorDark : "#000000",
+							colorLight : "#ffffff",
+							correctLevel : QRCode.CorrectLevel.Q
+							});
+
+							$('#imprimir_puerto').html('<b>Puerto: </b>'+row.puerto);
+							$('#imprimir_cliente').html('<b>Cliente: </b>'+row.razon_social);
+							$('#imprimir_proveedor').html('<b>Proveedor: </b>'+row.proveedor);
+							$('#imprimir_fecha_de_creacion').html('<b>Fecha de Ingreso: </b>'+row.fecha);
+
+							//sin no hay chofer o chapa, ocultamos
+							if (row.chapa=='' || row.chapa==null) {
+								$('#imprimir_chapa').hide();
+							}else {
+								$('#imprimir_chapa').html('<b>Chapa: </b>'+row.chapa);
+								$('#imprimir_chapa').show();
+							}
+							if (row.chofer=='' || row.chofer==null) {
+								$('#imprimir_chofer').hide();
+							}else {
+								$('#imprimir_chofer').html('<b>Chofer: </b>'+row.chofer);
+								$('#imprimir_chofer').show();
+							}
+							//sin no hay chofer o chapa, ocultamos -- fin
+
+
+							$('#modal_imprimir').modal('show');
+
+
+						}
+				}
+
+
+ function colorEstado(data) {
+		switch (data) {
+			case 'UTILIZADO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-danger"><i class="fas fa-check-circle my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+            case 'PENDIENTE':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-info"><i class="fas fa-truck my-1 mx-1"></i>' + data + '</span></b>';
+                break;
+            case 'REPROGRAMADO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-succes"><i class="fas fa-clock my-1 mx-1"></i> ' + data + '</span></b>';
+                break;
+            case 'EN TRÁNSITO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-warning"><i class="fas fa-truck my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+			default:
+				return '<span style="text-transform: capitalize;" class="badge badge-pill badge-default"><i class="fas fa-ban my-1 mx-1"></i> ' + data + '</span></b>';
+
+        }
+    }
+
+
+        //TOOLTIP EN COLUMNAS TRUNCADAS
+        $('#tabla').on('mouseenter', ".verTooltip", function () {
+            var $this = $(this);
+            $this.attr('title', $this.text());
+        });
+
+				$('#tabla_cupos').on('mouseenter', ".verTooltip", function () {
+						var $this = $(this);
+						$this.attr('title', $this.text());
+				});
+
+        //CSS PARA TRUNCAR COLUMNAS MUY LARGAS
+        function truncarColumna(value,row,index, field){
+          return {
+            classes: 'verTooltip',
+            css: {"max-width": "150px" , "white-space": "pre", "overflow": "hidden", "text-overflow": "ellipsis"}
+          };
+        }
+
+        $("#tabla").bootstrapTable({
+            mobileResponsive: true,
+            height: $(window).height()-90,
+            pageSize: Math.floor(($(window).height()-90)/50),
+            sortName: "t.id_ticket",
+            sortOrder: 'desc',
+            trimOnSearch: false,
+            columns: [
+                [
+									{	field: 'state', align: 'center', valign: 'middle',title: '', checkbox: true },
+									{	field: 'id_ticket', align: 'left', valign: 'middle', title: 'Ticket N°', sortable: true, visible: true },
+									{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'ID Cupo-Proveedor', sortable: true, visible: false },
+									{	field: 'id_usuario', align: 'left', valign: 'middle', title: 'ID Usuario', sortable: true, visible: false },
+									{	field: 'usuario', align: 'left', valign: 'middle', title: 'Usuario', sortable: true, visible: false },
+									{	field: 'id_cliente', align: 'left', valign: 'middle', title: 'ID Cliente', sortable: true, visible: false },
+									{	field: 'proveedor', align: 'left', valign: 'middle', title: 'Proveedor', sortable: true, visible: false },
+									{	field: 'razon_social', align: 'left', valign: 'middle', title: 'Cliente', sortable: true, visible: true },
+									{	field: 'id_puerto', align: 'left', valign: 'middle', title: 'ID Puerto', sortable: true, cellStyle: truncarColumna, visible: false	},
+									{	field: 'puerto', align: 'left', valign: 'middle', title: 'Puerto', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'cantidad_asignada', align: 'left', valign: 'middle', title: 'Cantidad Asignada', sortable: true, visible: false },
+									{	field: 'fecha_de_creacion', align: 'left', valign: 'middle', title: 'Fecha Asignada', sortable: true, cellStyle: truncarColumna	},
+
+									{	field: 'fecha_fin', align: 'left', valign: 'middle', title: 'Fecha Límite', sortable: true, cellStyle: truncarColumna	},
+
+									{	field: 'cantidad_disponible', align: 'left', valign: 'middle', title: 'Cantidad Disponible', sortable: true, cellStyle: truncarColumna, visible: false	},
+									{	field: 'id_chofer', align: 'left', valign: 'middle', title: 'ID Chofer', sortable: true, cellStyle: truncarColumna, visible: false},
+									{	field: 'chofer', align: 'left', valign: 'middle', title: 'Chofer', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'chapa', align: 'left', valign: 'middle', title: 'Chapa', sortable: true, cellStyle: truncarColumna	},
+									{	field: 'estado', align: 'center', valign: 'middle', title: 'Estado', sortable: true	, formatter: colorEstado },
+									{	field: 'editar', align: 'center', valign: 'middle', title: 'Editar', sortable: false, events: accionesFila,  formatter: iconosFila	},
+									{	field: 'imprimir', align: 'center', valign: 'middle', title: 'Imprimir', sortable: false, events: accionesFila3,  formatter: iconosFila3	}
+                ]
+            ]
+        });
+
+				$("#tabla_cupos").bootstrapTable({
+						// mobileResponsive: true,
+						height: $(window).height()-90,
+						pageSize: Math.floor(($(window).height()-90)/50),
+						sortName: "id_cupo",
+						sortOrder: 'desc',
+						trimOnSearch: false,
+						columns: [
+								[
+									{	field: 'id_cupos_proveedor', align: 'left', valign: 'middle', title: 'Cupo Nro', sortable: true, visible: true },
+									{	field: 'razon_social', align: 'left', valign: 'middle', title: 'Cliente', sortable: true, visible: true },
+									{	field: 'puerto', align: 'left', valign: 'middle', title: 'Puerto', sortable: true, visible: true },
+									{	field: 'cantidad_disponible', align: 'center', valign: 'middle', title: 'Cupos Asignados', sortable: true, visible: true },
+									{	field: 'estado', align: 'center', valign: 'middle', title: 'Estado', sortable: true, visible: true },
+
+
+
+									{	field: 'id_cupo', align: 'left', valign: 'middle', title: 'ID Cupo', sortable: true, visible: false },
+									{	field: 'id_proveedor', align: 'left', valign: 'middle', title: 'ID Proveedor', sortable: true, visible: false },
+									{	field: 'id_cliente', align: 'left', valign: 'middle', title: 'ID Cliente', sortable: true, visible: false },
+									{	field: 'id_puerto', align: 'left', valign: 'middle', title: 'ID Puerto', sortable: true, visible: false },
+									{	field: 'fecha_cupo', align: 'left', valign: 'middle', title: 'Fecha Cupo', sortable: true, visible: true },
+									{	field: 'asignar', align: 'center', valign: 'middle', title: 'Asignar Chofer', sortable: false, events: accionesFila2,  formatter: iconosFila2	}
+								]
+						]
+				});
+
+
+        //Altura de tabla automatica
+        $(document).ready(function () {
+            $(window).bind('resize', function(e)
+                {
+                  if (window.RT) clearTimeout(window.RT);
+                  window.RT = setTimeout(function()
+                  {
+                    $("#tabla").bootstrapTable('refreshOptions', {
+                        height: $(window).height()-90,
+                        pageSize: Math.floor(($(window).height()-90)/50),
+                    });
+                  }, 100);
+                });
+        });
+
+				$('#agregar').click(function(){
+            $('#modalLabel').html('Asignar nuevos tickets');
+            $('#formulario').attr('action', 'cargar');
+						$('#tabla_cupos').bootstrapTable('refresh', {url: 'inc/tickets-data.php?q=ver_cupos&id_proveedor='+localStorage.getItem("id_proveedor")});
+        });
+				$('#imprimir_tickets').click(function(){
+				imprimir_tickets();
+				});
+
+        $('#modal_principal').on('show.bs.modal', function (e) {
+            if ($('#formulario').attr('action')=="cargar"){
+                limpiarModal(e);
+                $('#eliminar').hide();
+
+            }
+        });
+
+        $('#modal_principal').on('shown.bs.modal', function (e) {
+            $("form input[type!='hidden']:first").focus();
+        });
+
+        $(".modal-dialog").draggable({
+            handle: ".modal-header"
+        });
+
+        function limpiarModal(){
+            $(document).find('form').trigger('reset');
+        }
+
+        //GUARDAR NUEVO REGISTRO O CAMBIOS EDITADOS
+        $("#formulario").submit(function(e){
+            e.preventDefault();
+            var data = $(this).serializeArray();
+            //data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
+            $.ajax({
+                url: 'inc/tickets-data.php?q='+$(this).attr("action"),
+                dataType: 'html',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+                data: data,
+                beforeSend: function(){
+                    NProgress.start();
+                },
+                success: function(datos, textStatus, jQxhr){
+                    NProgress.done();
+                    var n = datos.toLowerCase().indexOf("error");
+                    if (n == -1) {
+                        $('#modal_principal').modal('hide');
+                        alertDismissJS(datos, "ok");
+                        $('#tabla').bootstrapTable('refresh', {url: 'inc/tickets-data.php?q=ver&id_proveedor='+localStorage.getItem("id_proveedor")});
+                    }else{
+                        alertDismissJS(datos, "error");
+                    }
+                },
+                error: function(jqXhr, textStatus, errorThrown){
+                    NProgress.done();
+                    alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                }
+            });
+        });
+
+
+				$("#formulario_asignar").submit(function(e){
+						e.preventDefault();
+						var data = $(this).serializeArray();
+						//data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
+						$.ajax({
+								url: 'inc/tickets-data.php?q='+$(this).attr("action"),
+								dataType: 'html',
+								type: 'post',
+								contentType: 'application/x-www-form-urlencoded',
+								data: data,
+								beforeSend: function(){
+										NProgress.start();
+								},
+								success: function(datos, textStatus, jQxhr){
+										NProgress.done();
+										var n = datos.toLowerCase().indexOf("error");
+										if (n == -1) {
+											$('#modal_principal').modal('hide');
+											$('#modal_asignar').modal('hide');
+												alertDismissJS(datos, "ok");
+												$('#tabla').bootstrapTable('refresh', {url: 'inc/tickets-data.php?q=ver&id_proveedor='+localStorage.getItem("id_proveedor")});
+										}else{
+												alertDismissJS(datos, "error");
+										}
+								},
+								error: function(jqXhr, textStatus, errorThrown){
+										NProgress.done();
+										alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+								}
+						});
+				});
+
+
+
+        //ELIMINAR
+        $('#eliminar').click(function(){
+            var nombre = $("#hidden_id_ticket").val();
+            swal({
+                title: "¿Eliminar Ticket Nro: "+nombre+"?",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "var(--primary)",
+                confirmButtonText: "Eliminar",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            }, function(){
+                $.ajax({
+                    dataType: 'html',
+                    async: false,
+                    type: 'POST',
+                    url: 'inc/tickets-data.php',
+                    cache: false,
+                    data: {q: 'eliminar', id: $("#hidden_id_ticket").val(), id_cupos_proveedor:  $("#hidden_id_cupos_proveedor").val()},
+                    beforeSend: function(){
+                        NProgress.start();
+                    },
+                    success: function (data, status, xhr) {
+                        var n = data.toLowerCase().indexOf("error");
+                        if (n == -1) {
+													$('#modal_principal').modal('hide');
+													$('#modal_asignar').modal('hide');
+                            swal.close();
+                            alertDismissJS(data, "ok");
+                            NProgress.done();
+                            $('#tabla').bootstrapTable('refresh', {url: 'inc/tickets-data.php?q=ver&id_proveedor='+localStorage.getItem("id_proveedor")});
+                        }else{
+                            alertDismissJS(data, "error");
+                        }
+                    },
+                    error: function (jqXhr) {
+                        alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+                    }
+                });
+            });
+        });
+
+
+				$('#usuario').on('keyup change', function (e) {
+					$('#contraseña').val($('#usuario').val().trim());
+				});
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function proveedor() {
+					$proveedor = $('#proveedor').select2({
+			            dropdownParent: $("#modal_principal"),
+			            placeholder: 'Buscar Proveedor',
+			            language: "es",
+			            theme: "bootstrap4",
+			            width: 'style',
+			            allowClear: true,
+			            selectOnClose: false,
+			            dropdownPosition: 'below',
+			            //minimumInputLength: 2,
+			            //minimumResultsForSearch: 5,
+			            ajax: {
+			                url: 'inc/tickets-data.php',
+			                dataType: 'json',
+			                delay: 50,
+			                data: function(params) {
+			                    return { q: 'buscar_proveedor', term: params.term, page: params.page || 1 }
+			                },
+			                processResults: function(data, params) {
+			                    params.page = params.page || 1;
+			                    return {
+			                        results: $.map(data, function(obj) { return { id: obj.id_proveedor, text: obj.nombre }; }),
+			                        pagination: { more: (params.page * 5) <= data[0].total_count }
+			                    };
+			                },
+			                cache: true
+			            }
+			        });
+				}
+				proveedor();
+
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function puertos() {
+					$puertos = $('#puertos').select2({
+									dropdownParent: $("#modal_principal"),
+									placeholder: 'Buscar Puerto',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/tickets-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_puertos', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_puerto, text: obj.puerto }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				puertos();
+
+				//SELECT DE DIRECCION MODAL PRINCIPAL
+				function clientes() {
+					$clientes = $('#clientes').select2({
+									dropdownParent: $("#modal_principal"),
+									placeholder: 'Buscar Clientes',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/tickets-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_clientes', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_cliente, text: obj.razon_social }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				clientes();
+
+				function choferes() {
+					$choferes = $('#chofer').select2({
+									dropdownParent: $("#modal_asignar"),
+									placeholder: 'Buscar Choferes',
+									language: "es",
+									theme: "bootstrap4",
+									width: 'style',
+									allowClear: true,
+									selectOnClose: false,
+									dropdownPosition: 'below',
+									//minimumInputLength: 2,
+									//minimumResultsForSearch: 5,
+									ajax: {
+											url: 'inc/tickets-data.php',
+											dataType: 'json',
+											delay: 50,
+											data: function(params) {
+													return { q: 'buscar_choferes', term: params.term, page: params.page || 1 }
+											},
+											processResults: function(data, params) {
+													params.page = params.page || 1;
+													return {
+															results: $.map(data, function(obj) { return { id: obj.id_chofer, text: obj.nombre }; }),
+															pagination: { more: (params.page * 5) <= data[0].total_count }
+													};
+											},
+											cache: true
+									}
+							});
+				}
+				choferes();
+
+				function printDiv(contenido) {
+						var ficha = document.getElementById(contenido);
+						var ventanaImpresion = window.open(' ', 'Imprimir QR', 'width=600,height=620,scrollbars=NO');
+						ventanaImpresion.document.write('<link href="dist/css/style.css?v=2" rel="stylesheet">');
+						ventanaImpresion.document.write('<link href="dist/css/custom.css?v=6" rel="stylesheet">');
+						ventanaImpresion.document.write(ficha.innerHTML);
+						ventanaImpresion.document.close();
+						ventanaImpresion.print();
+						ventanaImpresion.close();
+				}
+
+					function fechaMYSQLx(fecha){
+						var fechaArr = fecha.split("-");
+						var salida = fechaArr[2]+"-"+fechaArr[1]+"-"+fechaArr[0];
+						return salida;
+					}
+
+
+
+					tickets_marcados=[];
+					function imprimir_tickets(){
+									var selecciones = $("#tabla").bootstrapTable('getSelections');
+									if (selecciones.length==0) {
+										swal({
+										title: "Error",
+										text: "Deben haber campos seleccionados",
+										type: "warning",
+										confirmButtonColor: "var(--primary)",
+										confirmButtonText: "Cerrar",
+										closeOnConfirm: true
+										}, function(){});
+									}else {
+										for (var i = 0 in selecciones) {
+											if (selecciones[i].estado=='PENDIENTE') {
+												//var row = {'id_ticket': selecciones[i].id_ticket};
+												tickets_marcados.push(selecciones[i].id_ticket);
+											}
+										}
+										swal({
+											title: "¿Imprimir?",
+											text: "Los tickets marcados serán impresos",
+											type: "warning",
+											showCancelButton: true,
+											confirmButtonColor: "var(--primary)",
+											confirmButtonText: "Imprimir",
+											cancelButtonText: "Cancelar",
+											closeOnConfirm: false
+										}, function(){
+											OpenWindowWithPost("inc/imprimir-qr-multiple.php", "toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=yes,resizable=yes,width=850,height=620", 'ImprimirPDF',tickets_marcados);
+											tickets_marcados=[];
+											swal.close();
+										});
+									}
+								};
+
+
+
+
+
+    </script>
+</body>
+</html>

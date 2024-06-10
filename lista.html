@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Lista - SARCOM</title>
+	<style type="text/css">
+
+	:root {
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --gray-dark: #343a40;
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --secondary: #f8f9fa;
+	  --success: #006666;
+	  --success_hover: #004040;
+	  --info: #263f93;
+	  --warning: #ff8800;
+	  --warning_hover: #a35201;
+	  --default: #949494;
+	  --default_hover: #7e7e7e;
+	  --danger: #c72344;
+	  --light: #f8f9fa;
+	  --dark: #343a40;
+	  --cyan: #01c0c8;
+	  --purple: #7460ee;
+	  --primary: #102a83;
+	  --primary_hover: #241140;
+	  --focus: 0 0 0 2px rgba(84, 38, 147, 0.3);
+	  --breakpoint-xs: 0;
+	  --breakpoint-sm: 576px;
+	  --breakpoint-md: 768px;
+	  --breakpoint-lg: 992px;
+	  --breakpoint-xl: 1600px;
+	  --font-family-sans-serif: 'Rubik', sans-serif;
+	  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	};
+
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=7" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+
+	<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+	<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+	<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="dist/js/qrcode.js" type="text/javascript" ></script>
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+    	<!--include topbar -->
+    	<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<!-- ============================================================== -->
+				<!-- Logo -->
+				<!-- ============================================================== -->
+				<!--<div class="navbar-header">
+					<a class="navbar-brand" href="index">
+						<b><img src="<?php echo $logo_icono; ?>" alt="homepage" class="dark-logo" /></b>
+						<span>
+							<img src="<?php echo $logo_texto; ?>" alt="homepage" class="dark-logo" />
+							<img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+						</span>
+					</a>
+				</div>-->
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+							<form class="app-search">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+							</form>
+						</li>-->
+						<li class="nav-item">
+							<span class="titulo">Lista</span>
+						</li>
+					</ul>
+					<!-- <?php //echo $menu_central; ?> -->
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 id="nombre_usuario" class="m-b-0">Usuario</h4>
+										<!--<p class=" m-b-0">varun@gmail.com</p>-->
+									</div>
+								</div>
+								<!--<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>-->
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+
+								<!-- <a class="dropdown-item" href="<?php echo url();?>/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</a> -->
+								<!--<div class="dropdown-divider"></div>
+								<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>-->
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="aa"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+						<div id="toolbar">
+							<div class="form-inline" role="form">
+								<div class="form-group">
+									<button type="button" class="btn btn-primary" id="agregar" data-toggle="modal" data-target="#modal_principal">Registrar Pedido</button>
+								</div>
+							</div>
+						</div>
+						<table id="tabla"  data-toolbar="#toolbar" data-show-export="false" data-search="true" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-search-align="right" data-buttons-align="right" data-toolbar-align="left" data-pagination="true" data-side-pagination="server" data-classes="table table-hover table-condensed-sm" data-striped="true" data-icons="icons" data-show-fullscreen="false"></table>
+
+						<!-- MODA PRINCIPAL -->
+						<!-- <div class="modal fade" id="modal_principal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"> -->
+						<div class="modal fade" id="modal_principal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="true">
+							<div class="modal-dialog modal-md2 modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel"></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+                                    <!-- Form Registrar pedido -->
+									<form class="form" id="formulario" method="post" enctype="multipart/form-data" action="">
+										<input type="hidden" name="hidden_id_pedido" id="hidden_id_pedido">
+										<div class="modal-body">
+											<div class="row">
+												<div class="col-md-12 col-sm-12">
+													<div class="form-row">
+														<div class="form-group col-md-3 col-sm-6">
+															<label for="ruc">CI / RUC</label>
+															<input class="form-control input-sm" type="text" name="ruc" id="ruc" autocomplete="off">
+															<i id="spin_ruc" class="fa fa-cog fa-spin fa-2x spinner"></i>
+														</div>
+														<div class="form-group col-md-9 col-sm-12">
+															<label for="razon_social">Nombre y Apellido</label>
+															<input class="form-control input-sm" type="text" name="razon_social" id="razon_social" autocomplete="off" required>
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+															<label for="razon_social">Correo Electrónico</label>
+															<input class="form-control input-sm" type="email" name="correo" id="correo" autocomplete="off">
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+															<label for="celular">Celular</label>
+															<input class="form-control input-sm" type="text" name="celular" id="celular" autocomplete="off">
+														</div>
+														<!-- <div class="form-group col-md-3 col-sm-6">
+															<label for="telefono">Teléfono</label>
+															<input class="form-control input-sm" id="telefono" name="telefono" type="text" autocomplete="off">
+														</div> -->
+														<!-- <div class="form-group col-md-6 col-sm-6">
+															<label for="direccion">Dirección</label>
+															<input class="form-control input-sm" id="direccion" name="direccion" type="text" autocomplete="off">
+														</div> -->
+														<div class="form-group col-md-6 col-sm-6">
+                                                            <label for="direccion">Dirección</label>
+                                                            <div class="input-group">
+                                                                <select class="form-control input-sm select2" name="direccion" id="direccion" aria-label="button-direccion" required></select>
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-primary" type="button" id="button-direccion" data-toggle="modal" data-target="#modal_direccion" title="Agregar direccion"><i class="fa fa-plus"></i></button>
+                                                                </div>
+                                                            </div>
+                              </div>
+                            <div class="form-group col-md-3 col-sm-6">
+															<label for="nro_casa">Numero de casa</label>
+															<input class="form-control input-sm" id="nro_casa" name="nro_casa" type="text" autocomplete="off">
+														</div>
+														<div class="form-group col-md-3 col-sm-6">
+															<label for="zona">Zona</label>
+															<div class="input-group">
+																<select class="form-control input-sm select2" name="zona" id="zona" aria-label="button-nro-zona"></select>
+																<input type="hidden" name="zona2" id="zona2">
+                                                            </div>
+														</div>
+														<div class="form-group col-md-12 col-sm-12">
+															<label for="ubicacion_map">Posición GPS</label>
+															<button style="font-size: large;" class="form-control btn btn-success" type="button"  id="ubicacion_map" name="ubicacion_map"></button>
+															<input class="form-control input-sm" id="hidden_ubicacion_map" name="hidden_ubicacion_map" type="hidden" autocomplete="off">
+														</div>
+													</div>
+													<div class="row">
+                                                        <!-- <div class="form-group col-md-6 col-sm-6">
+															<label for="fecha-entrega">Fecha Tope</label>
+															<input class="form-control input-sm" id="fecha_tope" name="fecha_tope" type="date" autocomplete="off">
+														</div> -->
+														<div class="form-group col-md-3 col-sm-6">
+															<label for="nro_lote">Nro Lote</label>
+															<div class="input-group">
+																<select class="form-control input-sm select2" name="nro_lote" id="nro_lote" aria-label="button-nro-lote" required></select>
+															</div>
+
+														</div>
+														<div class="form-group col-md-4 col-sm-6">
+															<label for="fecha-entrega">Fecha Tope</label>
+                                  <div class="input-group">
+																<input class="form-control input-sm" id="fecha_tope" name="fecha_tope" type="date" autocomplete="on">
+																<input class="form-control input-sm" id="cantidad_r" name="cantidad_r" type="hidden" autocomplete="on">
+                                      <div class="input-group-append div-fecha_tope hide">
+																	<button class="btn btn-primary" type="button" id="button-fecha_tope">Reprogramar</button>
+																	<input id="input-siNo" type="hidden" name="sumar" value="no">
+                                        </div>
+                                    </div>
+                                </div>
+
+														<div class="form-group col-md-4 col-sm-6">
+															<label for="entidad">Entidad</label>
+															<input class="form-control input-sm upper" type="text" name="entidad" id="entidad" autocomplete="off" >
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+															<label for="proveedor">Repartidor</label>
+																<select class="form-control input-sm select2" name="proveedor" id="proveedor" aria-label="button-direccion" required></select>
+														</div>
+														<div class="form-group col-md-6 col-sm-12">
+															<label for="consideracion">Consideración/Observacion:</label>
+															<input class="form-control input-sm" id="consideracion" name="consideracion" type="text" autocomplete="off">
+														</div>
+														<!-- <div class="form-group col-md-8 col-sm-12">
+															<label for="email">E-mail</label>
+															<input class="form-control input-sm" id="email" name="email" type="email" autocomplete="off">
+														</div> -->
+														<!--<div class="form-group col-md-4 col-sm-12">
+															<label for="tipo">Tipo de Cliente</label>
+															<select id="tipo" name="tipo" class="form-control">
+																<option value="Minorista">Minorista</option>
+																<option value="Mayorista">Mayorista</option>
+																<option value="VIP">VIP</option>
+															</select>
+														</div>-->
+													</div>
+													<!-- <div class="row">
+														<div class="form-group col-md-12 col-sm-12">
+															<label for="obs">Observaciones</label>
+															<input class="form-control input-sm" id="obs" name="obs" type="text" autocomplete="off">
+														</div>
+													</div> -->
+												</div>
+											</div>
+
+										</div>
+										<div class="modal-footer">
+											<button id="eliminar" type="button" class="btn btn-danger mr-auto" style="display:none">Eliminar</button>
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+											<button type="submit" class="btn btn-primary">Guardar</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<!-- MODAL direccion -->
+						<div class="modal" id="modal_direccion" tabindex="-1" role="dialog" aria-labelledby="modalLabeldireccion" aria-hidden="true" data-backdrop="static">
+							<div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabeldireccion">Agregar Direccion</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="row">
+											<div class="col-12 col-md-12">
+												<form class="form" id="form_direccion" method="post" enctype="multipart/form-data">
+													<div class="form-row">
+														<div class="form-group col-12">
+															<label for="direccion_carga">Dirección:</label>
+															<input class="form-control input-sm" type="text" name="direccion_carga" id="direccion_carga" autocomplete="off" required>
+														</div>
+														<div class="form-group col-4">
+															<label for="nro_casa_carga">N° de Casa:</label>
+															<input class="form-control input-sm" type="text" name="nro_casa_carga" id="nro_casa_carga" autocomplete="off">
+														</div>
+														<div class="form-group col-8">
+															<label for="zona_carga">Zona:</label>
+															<select class="form-control input-sm select2" name="zona_carga" id="zona_carga" aria-label="button-zona_carga" required></select>
+														</div>
+														<div class="form-group col-12">
+															<label for="direccion_carga">Observación:</label>
+															<input class="form-control input-sm" type="text" name="observacion" id="observacion" autocomplete="off">
+														</div>
+													</div>
+													<div class="form-row">
+														<div class="form-group col-12">
+															<button type="submit" class="btn btn-success float-right">Guardar</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal" id="modal_map" tabindex="-1" role="dialog" aria-labelledby="modalLabeldireccion" aria-hidden="true" data-backdrop="static">
+							<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabeldireccion">Agregar Direccion</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+											<div class="row">
+												<div class="form-group col-12">
+												<div id="content-mapa">
+														<input style="width: 30%;" id="pac-input" class="form-control input mt-2" type="text" placeholder="Busca la dirección"/>
+														<div id="map" style="width: 100%; height: 100%;"></div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-12">
+													<button type="button" id="establecer_pin_point" class="btn btn-primary float-right mt-1" disabled>Establecer Pin Point</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- MODAL CODIGO QR -->
+						<div class="modal fade" id="modal_codigo_qr" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-md2 modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="modalLabel_codigo_qr"></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="row">
+											<div style="margin-bottom: 10px;" class="col-md-12 col-sm-12">
+												<div class="">
+													<!-- prueba de QRcode.js -->
+													<div id="qrcode" style="display: flex; justify-content: center;"></div>
+												</div>
+											</div>
+
+											<div  class="col-md-12 col-sm-12 text-center">
+												<hr>
+												<h3><b>Información de Pedido</b></h3>
+												<!-- <hr> -->
+											</div>
+											<div  class="col-md-12 col-sm-12 text-center">
+												<div class="form-group col-12 text-center">
+													<h4 class=""><b>Nombre y Apellido :</b></h4><h5 id="nombre_apellido"></h5>
+												</div>
+												<div class="form-group col-12 text-center">
+													<h4 class=""><b>Fecha Tope :</b></h4><h5 id="fecha_tope_qr"></h5>
+												</div>
+											</div>
+
+										</div>
+
+										<!-- QR para imprimir -->
+										<div style="max-width: 10px; max-height: 20px;" id="divQR" class="row hide">
+
+											<div style="width:25%; margin-top: 1px;" class="col-md-12 col-sm-12">
+												<div class="">
+													<div id="qrcode2" style="display: flex; justify-content: left;"></div>
+												</div>
+											</div>
+											<div style="width:25%;"  class="col-md-12 col-sm-6 left">
+												<div style="width:100%;" class="form-row">
+													<div class="form-group col-md-12 col-sm-12 mb-0 left">
+														<h6 style="margin-bottom: 2px; margin-top: 1px;" class="mb-0"><b>Destino: </b><span id="nombre_apellido2"></span></h6>
+														<h6 style="margin-bottom: 2px; margin-top: 1px;" class="mb-0"><b>CI: </b><span id="nro_cedula_qr2"></span></h6>
+														<h6 style="margin-bottom: 2px; margin-top: 1px;" class="mb-0"><b>Dirección: </b><span id="direccion_qr2"></span></h6>
+														<h6 style="margin-bottom: 2px; margin-top: 1px;" class="mb-0"><b>Observación: </b><span id="consideracion_qr2"></span></h6>
+													</div>
+												</div>
+											</div>
+										</div>
+									<div class="modal-footer">
+										<!-- <button id="eliminar" type="button" class="btn btn-danger mr-auto" style="display:none">Eliminar</button>		 -->
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+										<button type="button" class="btn btn-primary" onclick="printDiv('divQR')">Imprimir</button>
+										<!-- <button type="submit" class="btn btn-success">Guardar</button> -->
+									</div>
+								</div>
+							<div>
+						<div>
+
+					</div><!-- End col-12 -->
+                </div><!-- End Page Content -->
+            </div><!-- End Container fluid  -->
+
+
+
+
+
+
+
+		</div><!-- End Page wrapper  -->
+       <!-- <?phpinclude 'footer.php'; ?> -->
+    </div><!-- End Wrapper -->
+<script type="text/javascript">
+	$(document).ready( function () {
+		//verificar login
+		if (localStorage.getItem("id_usuario")) {
+			console.log('esta logueado');
+			//location.replace("inicio.html");
+		}else {
+			console.log('NO esta logueado');
+			location.replace("login.html");
+		}
+
+		//definir tipo de usuario
+		if (localStorage.getItem("tipo_usuario")=='superadmin') {
+			tipo_usuario = 'superadmin';
+		}else if (localStorage.getItem("tipo_usuario")=='admin') {
+			tipo_usuario = 'admin';
+		}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+			tipo_usuario = 'proveedor';
+		}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+			tipo_usuario = 'cliente';
+		}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+			tipo_usuario = 'encargado';
+		}
+		else {
+			tipo_usuario = 'visitante';
+		};
+
+
+		//ajax para el leftbar
+		$.ajax({
+			dataType: 'html',
+			async: true,
+			type: 'POST',
+			url: 'inc/leftbar-data.php',
+			cache: false,
+			data: {q: tipo_usuario},
+			success: function (data, status, xhr) {
+				var n = data.toLowerCase().indexOf("error");
+				if (n == -1) {
+					$('#sidebarnav').html(data);
+					cargarScriptMenu();
+				}else{
+					alertDismissJS(data, "error");
+				}
+			},
+			error: function (jqXhr) {
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+		$('#nombre_usuario').html(localStorage.getItem("nombre_usuario"));
+
+
+
+
+		//discriminacion de roles
+		if (localStorage.getItem("tipo_usuario")=='proveedor') {
+			$('#tabla').bootstrapTable('refresh', {url: 'inc/pedidos-data.php?q=ver&id_repartidor='+localStorage.getItem("id_repartidor")});
+			$('#agregar').hide();
+		}else {
+			$('#tabla').bootstrapTable('refresh', {url: 'inc/pedidos-data.php?q=ver'});
+		}
+		//discriminacion de roles
+		$("fecha_tope").prop('disabled', true);
+
+		// Tamaño del mapa al cargar
+		$('#content-mapa').css('height', $(window).height()-150 + "px");
+		$('#content-mapa').css('width', "100%");
+
+		// Adapta el mapa al redimensionar
+		$(window).bind('resize', function(e) {
+				if (window.RT) clearTimeout(window.RT);
+				window.RT = setTimeout(function() {
+						$('#content-mapa').css('height', $(window).height()-80 + "px");
+				}, 100);
+		});
+
+
+
+
+
+
+	});
+	//fin de onready
+
+	function cargarScriptMenu() {
+		let scriptActual = document.getElementById('script');
+		let nuevoScript = document.createElement('script');
+		nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+		document.head.replaceChild(nuevoScript, scriptActual);
+	}
+
+	function logout(){
+			localStorage.clear();
+			sessionStorage.clear();
+			location.replace('login.html');
+	}
+
+	/*$('.modal').on("hidden.bs.modal", function (e) { //fire on closing modal box
+		if ($('.modal:visible').length) { // check whether parent modal is opend after child modal close
+			$('body').addClass('modal-open'); // if open mean length is 1 then add a bootstrap css class to body of the page
+		}
+	});*/
+
+	if (localStorage.getItem("tipo_usuario")=='proveedor') {
+		function iconosFila(value, row, index) {
+			return [
+				// '<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm editar mr-1" title="Editar datos"><i class="fas fa-edit"></i></button>',
+				'<button type="button" onclick="javascript:void(0)" class="btn btn-info btn-sm generar-qr mr-1" title="Generar código QR"><i class="fas fa-qrcode"></i></button>',
+				'<button type="button" onclick="javascript:void(0)" class="btn btn-success btn-sm reenviar-pin mr-1" title="Reenviar PIN"><i class="fas fa-lock"></i></button>'
+			].join('');
+		}
+	}else {
+		function iconosFila(value, row, index) {
+			return [
+				'<button type="button" onclick="javascript:void(0)" class="btn btn-primary btn-sm editar mr-1" title="Editar datos"><i class="fas fa-edit"></i></button>',
+				'<button type="button" onclick="javascript:void(0)" class="btn btn-info btn-sm generar-qr mr-1" title="Generar código QR"><i class="fas fa-qrcode"></i></button>',
+				'<button type="button" onclick="javascript:void(0)" class="btn btn-success btn-sm reenviar-pin mr-1" title="Reenviar PIN"><i class="fas fa-lock"></i></button>'
+			].join('');
+		}
+	}
+
+
+
+
+	window.accionesFila = {
+
+		'click .editar': function (e, value, row, index) {
+			$('#establecer_pin_point').prop('disabled', true);
+
+			$('#modalLabel').html('Editar Pedido');
+			$('#formulario').attr('action', 'editar');
+			$('#eliminar').show();
+			$('#modal_principal').modal('show');
+			$("#hidden_id_pedido").val(row.id_pedido);
+			$("#razon_social").val(row.razon_social);
+			$("#correo").val(row.correo);
+			$("#ruc").val(row.ruc);
+			$("#ubicacion_map").html(row.ubicacion_uno);
+			$("#hidden_ubicacion_map").val(row.ubicacion_uno);
+			$("#direccion").select2('trigger', 'select', {
+				data: { id: row.id_direccion, text: row.direccion }
+			});
+			$("#celular").val(row.celular.replaceAll("[^A-Za-z0-9/ /g]",""));
+			$("#nro_casa").val(row.nro_casa);
+			$("#zona").select2('trigger', 'select', {
+				data: { id: row.id_zona, text: row.zona }
+			});
+			//$("#fecha_tope").val(row.fecha_tope);
+			//$("#fecha_tope").attr("type", "text");
+			$("#input-siNo").attr("value", "no");
+
+			$("#fecha_tope").val(row.fecha_tope2);
+
+			// $("#fecha_topeA").val(row.fecha_tope2);
+
+			$("#cantidad_r").val(row.cantidad_reprogramaciones);
+			$("#consideracion").val(row.consideraciones);
+
+
+			//$("#fecha_tope").attr("readonly", "readonly");
+			$("#button-fecha_tope").removeAttr("disabled");
+			$(".hidden").attr("style", "display: block;");
+			$(".div-fecha_tope").removeClass('hide');
+
+			$("#entidad").val(row.entidad);
+			// $("#nro_lote").val(row.nro_lote);
+			$("#nro_lote").select2('trigger', 'select', {
+				data: { id: '', text: '' }
+			});
+			$("#nro_lote").select2('trigger', 'select', {
+				data: { id: row.nro_lote, text: row.nro_lote }
+			});
+			$("#proveedor").select2('trigger', 'select', {
+				data: { id: row.id_repartidor, text: row.proveedor }
+			});
+
+
+
+
+
+		},
+		'click .generar-qr': function (e, value, row, index) {
+			$('#modalLabel_codigo_qr').html('Código QR');
+			$('#modal_codigo_qr').modal('show');
+			$('#qrcode').html('');
+			$("#nombre_apellido").html(row.razon_social);
+			$("#fecha_tope_qr").html(row.fecha_tope);
+
+
+			$('#qrcode2').html('');
+			$("#nombre_apellido2").html(row.razon_social);
+			$("#fecha_tope_qr2").html(row.fecha_tope);
+			$("#direccion_qr2").html(row.direccion);
+			$("#consideracion_qr2").html(row.consideraciones);
+			$("#nro_cedula_qr2").html(row.ruc);
+
+			var nombre = row.razon_social;
+			var correo = row.correo;
+			var ruc = row.ruc;
+			var direccion = row.direccion;
+			var zona = row.zona;
+			var fecha_tope = row.fecha_tope;
+			var entidad = row.entidad;
+			var id_pedido = row.id_pedido;
+			var nro_casa = row.nro_casa;
+
+
+			var url='ver_datos.html?q=ver_datos&id_pedido='+id_pedido;
+
+			// se codifica para que los caracteres especiales como el espacio en blanco no corten la url
+			var url_codificada = encodeURI(url);
+			//console.log(url_codificada);
+
+			// new QRCode(document.getElementById("qrcode"), url_codificada);
+
+			// Se usa nivel de correccion Q para no de error con el caracter º
+			var qrcode = new QRCode(document.getElementById("qrcode"), {
+				text: url_codificada,
+				width: 256,
+				height: 256,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.Q
+			});
+
+			var qrcode2 = new QRCode(document.getElementById("qrcode2"), {
+				text: url_codificada,
+				width: 200,
+				height: 150,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.Q
+			});
+		},
+		'click .reenviar-pin': function (e, value, row, index) {
+			var nombre = row.razon_social;
+			var correo = row.correo;
+			var pin = row.pin;
+			var fecha_tope = row.fecha_tope;
+			var celular = row.celular.replaceAll("[^A-Za-z0-9/ /g]","");
+			swal({
+				title: "¿Reenviar PIN a "+nombre+"?",
+				text: "",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "var(--primary)",
+				confirmButtonText: "Reenviar",
+				cancelButtonText: "Cancelar",
+				closeOnConfirm: false
+			}, function(){
+				$.ajax({
+					dataType: 'html',
+					async: false,
+					type: 'POST',
+					url: 'inc/pedidos-data.php',
+					cache: false,
+					data: {q: 'reenviar_pin',correo: correo, pin: pin, nombre: nombre, fecha_tope: fecha_tope, celular: celular },
+					beforeSend: function(){
+						NProgress.start();
+					},
+					success: function (data, status, xhr) {
+						var n = data.toLowerCase().indexOf("error");
+						if (n == -1) {
+							$('#modal_principal').modal('hide');
+							swal.close();
+							alertDismissJS(data, "ok");
+							NProgress.done();
+						}else{
+							alertDismissJS(data, "error");
+							NProgress.done();
+						}
+					},
+					error: function (jqXhr) {
+						alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+					}
+				});
+			});
+		}
+	}
+
+
+
+	//TOOLTIP EN COLUMNAS TRUNCADAS
+	$('#tabla').on('mouseenter', ".verTooltip", function () {
+		var $this = $(this);
+		$this.attr('title', $this.text());
+	});
+
+	//CSS PARA TRUNCAR COLUMNAS MUY LARGAS
+	function truncarColumna(value,row,index, field){
+	  return {
+		classes: 'verTooltip',
+		css: {"max-width": "50px" , "white-space": "pre", "overflow": "hidden", "text-overflow": "ellipsis"}
+	  };
+	}
+
+ function colorEstado(data) {
+		switch (data) {
+			case 'PENDIENTE':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-danger"><i class="fas fa-hourglass-half my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+            case 'ENTREGADO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-success"><i class="fas fa-check my-1 mx-1"></i>' + data + '</span></b>';
+                break;
+            case 'REPROGRAMADO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-info"><i class="fas fa-clock my-1 mx-1"></i> ' + data + '</span></b>';
+                break;
+            case 'EN TRÁNSITO':
+                return '<span style="text-transform: capitalize;" class="badge badge-pill badge-warning"><i class="fas fa-truck my-1 mx-1"></i> ' + data + '</span></b>';
+               break;
+			default:
+				return '<span style="text-transform: capitalize;" class="badge badge-pill badge-default"><i class="fas fa-ban my-1 mx-1"></i> ' + data + '</span></b>';
+
+        }
+    }
+
+	$("#tabla").bootstrapTable({
+		mobileResponsive: true,
+		height: $(window).height()-90,
+		pageSize: Math.floor(($(window).height()-90)/50),
+		sortName: "id",
+		sortOrder: 'desc',
+		trimOnSearch: false,
+		columns: [
+			[
+				{	field: 'id', align: 'left', valign: 'middle', title: 'ID Cliente', sortable: true, visible: false },
+				{	field: 'id_pedido', align: 'left', valign: 'middle', title: 'ID Pedido', sortable: true, visible: true },
+
+				{	field: 'entidad', align: 'left', valign: 'middle', title: 'Entidad', sortable: true, visible: true },
+
+				{	field: 'ruc', align: 'left', valign: 'middle', title: 'Cédula', sortable: true	, visible: false},
+				{	field: 'razon_social', align: 'left', valign: 'middle', title: 'Nombre', sortable: true	},
+				{	field: 'correo', align: 'left', valign: 'middle', title: 'E-mail', sortable: true, cellStyle: truncarColumna, visible: false	},
+				// {	field: 'telefono', align: 'left', valign: 'middle', title: 'Teléfono', sortable: true	},
+				// {	field: 'celular', align: 'left', valign: 'middle', title: 'Celular', sortable: true	},
+				{	field: 'id_direccion', align: 'left', valign: 'middle', title: 'ID Direccion', sortable: true, visible: false },
+				{	field: 'celular', align: 'left', valign: 'middle', title: 'Celular', sortable: true, cellStyle: truncarColumna, visible: false	},
+				{	field: 'direccion', align: 'left', valign: 'middle', title: 'Dirección', sortable: true, cellStyle: truncarColumna, visible: false	},
+				{	field: 'ubicacion_uno', align: 'left', valign: 'middle', title: 'Ubicación', sortable: true, cellStyle: truncarColumna, visible: false	},
+				{	field: 'consideraciones', align: 'left', valign: 'middle', title: 'Consideración/Observación', sortable: true, cellStyle: truncarColumna, visible: false	},
+				{	field: 'nro_casa', align: 'left', valign: 'middle', title: 'Numero de casa', sortable: true, cellStyle: truncarColumna, visible: false	},
+				{	field: 'id_zona', align: 'left', valign: 'middle', title: 'ID Zona', sortable: true, visible: false },
+				{	field: 'zona', align: 'left', valign: 'middle', title: 'Zona', sortable: true, visible: false	},
+				// {	field: 'obs', align: 'left', valign: 'middle', title: 'Obs.', sortable: true	},
+				// {	field: 'tipo', align: 'left', valign: 'middle', title: 'Tipo', sortable: true, visible: false	},
+				{	field: 'id_repartidor', align: 'left', valign: 'middle', title: 'id_repartidor', sortable: true, visible: false },
+				{	field: 'proveedor', align: 'left', valign: 'middle', title: 'Repartidor', sortable: true, visible: true },
+				{	field: 'encargado', align: 'left', valign: 'middle', title: 'Encargado', sortable: true, visible: false },
+				{	field: 'nro_lote', align: 'center', valign: 'middle', title: 'Nº Lote', sortable: true, visible: false },
+				{	field: 'pin', align: 'left', valign: 'middle', title: 'PIN', sortable: true, visible: true, visible: false	},
+				{	field: 'fecha_tope2', align: 'left', valign: 'middle', title: 'Fecha Tope', sortable: true, visible: true },
+
+				{	field: 'estado', align: 'left', valign: 'middle', title: 'Estado', sortable: true, formatter: colorEstado },
+				// {	field: 'usuario', align: 'left', valign: 'middle', title: 'Usuario Carga', sortable: true, visible: false	},
+				// {	field: 'generar_codigo_qr', align: 'center', valign: 'middle', title: 'GenerarQR', sortable: false, events: accionesFila,  formatter: iconosFila	},
+				{	field: 'acciones', align: 'center', valign: 'middle', title: 'Acciones', sortable: false, events: accionesFila,  formatter: iconosFila, width:120	}
+			]
+		]
+	});
+
+	$('#tabla').on('load-success.bs.table', function (e) {
+		$("#tabla").bootstrapTable('resetView');
+		$("#tabla").bootstrapTable('resetWidth');
+	});
+
+	//Altura de tabla automatica
+	$(document).ready(function () {
+		$(window).bind('resize', function(e)
+			{
+			  if (window.RT) clearTimeout(window.RT);
+			  window.RT = setTimeout(function()
+			  {
+				$("#tabla").bootstrapTable('refreshOptions', {
+					height: $(window).height()-90,
+					pageSize: Math.floor(($(window).height()-90)/50),
+				});
+			  }, 200);
+			});
+
+
+	});
+
+	$('#ubicacion_map').click(function(){
+		$('#modal_map').modal('show');
+
+	});
+
+	$('#establecer_pin_point').click(function(){
+		$('#modal_map').modal('hide');
+		$('#ubicacion_map').html(ubicacion_click.substring(1, 39));
+		$('#hidden_ubicacion_map').val(ubicacion_click.substring(1, 39));
+
+	});
+
+
+
+	$('#button-fecha_tope').click(function(){
+		$("#input-siNo").val('si');
+		// console.log('si');
+
+		$.ajax({
+			dataType: 'json',
+			async: true,
+			cache: false,
+			url: 'inc/pedidos-data.php',
+			timeout:10000,
+			type: 'POST',
+			data: {q:'sumar_fecha_tope', fecha_topeA: $('#fecha_tope').val()},
+			success: function (json){
+				//$('#fecha_tope').val(json.fecha_tope_nuevo);
+				$("#button-fecha_tope").attr("disabled", "disabled");
+				$("#fecha_tope").attr("disabled", "disabled");
+				alertDismissJS('Para completar la reprogramación, debe asignar un Lote nuevo a este pedido', "error");
+
+			},
+			error: function (jqXhr) {
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+
+
+	});
+
+
+	$('#agregar').click(function(){
+		$('#modalLabel').html('Registrar Pedido');
+		$('#formulario').attr('action', 'cargar');
+		$('#hidden_ubicacion_map').val()=='';
+		$('#ubicacion_map').html()=='';
+	});
+	$('#establecer_pin_point').prop('disabled', true);
+
+	$('#generar-qr').click(function(){
+		$('#modalLabel').html('Generar QR');
+	});
+
+	// modal secundario
+	$('#modal_direccion').on('shown.bs.modal', function(e) {
+        $("#" + $(this)[0].id + " form input[type!='hidden']:first").val("").focus();
+    });
+
+	$('#modal_principal').on('show.bs.modal', function (e) {
+		if ($('#formulario').attr('action')=="cargar"){
+			limpiarModal(e);
+			$('#eliminar').hide();
+		}
+	});
+
+	// <!-- $('#modal_principal').on('shown.bs.modal', function (e) { -->
+	// 	<!-- $("form input[type!='hidden']:first").focus(); -->
+	// <!-- }); -->
+
+	$(".modal-dialog").draggable({
+		handle: ".modal-header"
+	});
+
+	function limpiarModal(){
+		$(document).find('form').trigger('reset');
+
+		$("#fecha_tope").removeAttr("readonly");
+		$("#button-fecha_tope").removeAttr("disabled");
+		$(".div-fecha_tope").addClass('hide');
+		$("#fecha_tope").attr("type", "date");
+		$("#zona").select2('trigger', 'select', {
+			data: { id: '', text: '' }
+		});
+		$("#direccion").select2('trigger', 'select', {
+			data: { id: '', text: '' }
+		});
+		$("#nro_lote").select2('trigger', 'select', {
+			data: { id: '', text: '' }
+		});
+		$("#proveedor").select2('trigger', 'select', {
+			data: { id: '', text: '' }
+		});
+		$("#ubicacion_map").html('');
+	}
+
+	//GUARDAR NUEVO REGISTRO O CAMBIOS EDITADOS
+	$("#formulario").submit(function(e){
+		e.preventDefault();
+		var data = $(this).serializeArray();
+		//data.push({name: 'detalles', value: JSON.stringify($('#tabla_detalles').bootstrapTable('getData'))});
+		if (	$("#hidden_ubicacion_map").val()) {
+		$.ajax({
+			url: 'inc/pedidos-data.php?q='+$(this).attr("action"),
+			dataType: 'html',
+			type: 'post',
+			contentType: 'application/x-www-form-urlencoded',
+			data: data,
+			beforeSend: function(){
+				NProgress.start();
+			},
+			success: function(datos, textStatus, jQxhr){
+				NProgress.done();
+				var n = datos.toLowerCase().indexOf("error");
+				if (n == -1) {
+					$('#modal_principal').modal('hide');
+					alertDismissJS(datos, "ok");
+					$('#tabla').bootstrapTable('refresh', {url: 'inc/pedidos-data.php?q=ver'});
+				}else{
+					alertDismissJS(datos, "error");
+				}
+			},
+			error: function(jqXhr, textStatus, errorThrown){
+				NProgress.done();
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+	}else {
+		alertDismissJS('Debe agregar una ubicación GPS', "error");
+	}
+
+	});
+
+
+	//ELIMINAR
+	$('#eliminar').click(function(){
+		var nombre = $("#razon_social").val();
+		swal({
+			title: "¿Eliminar Pedido de: "+nombre+"?",
+			text: "",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "var(--primary)",
+			confirmButtonText: "Eliminar",
+			cancelButtonText: "Cancelar",
+			closeOnConfirm: false
+		}, function(){
+			$.ajax({
+				dataType: 'html',
+				async: false,
+				type: 'POST',
+				url: 'inc/pedidos-data.php',
+				cache: false,
+				data: {q: 'eliminar', id: $("#hidden_id_pedido").val(), nombre: $("#razon_social").val() },
+				beforeSend: function(){
+					NProgress.start();
+				},
+				success: function (data, status, xhr) {
+					var n = data.toLowerCase().indexOf("error");
+					if (n == -1) {
+						$('#modal_principal').modal('hide');
+						swal.close();
+						alertDismissJS(data, "ok");
+						NProgress.done();
+						$('#tabla').bootstrapTable('refresh', {url: 'inc/pedidos-data.php?q=ver'});
+					}else{
+						alertDismissJS(data, "error");
+					}
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+		});
+	});
+
+
+	//AL PERDER EL FOCO Y SI EL MODAL ESTÁ VISIBLE
+	$('#ruc').blur(function(){
+		if ($('#modal_principal').is(':visible')){
+			buscarClienteFinal();
+		}
+	});
+
+	$('#razon_social').blur(function(){
+		if ($('#modal_principal').is(':visible')){
+			buscarClienteFinal();
+		}
+	});
+
+
+	function buscarClienteFinal(){
+		if ($("#ruc").val() || $("#razon_social").val()){
+			$.ajax({
+				dataType: 'json', async: true, cache: false, url: 'inc/pedidos-data.php', timeout:10000, type: 'POST', data: {q:'buscar_cliente_final', ruc: $("#ruc").val(), razon_social: $("#razon_social").val()},
+				beforeSend: function(){
+					$("#spin_ruc").show();
+				},
+				success: function (json){
+					if(json.ruc || json.razon_social){
+						$("#spin_ruc").hide();
+						$('#ruc').val(json.ruc);
+						$('#razon_social').val(json.razon_social);
+						$('#correo').val(json.correo);
+						$('#celular').val(json.celular.replaceAll("[^A-Za-z0-9/ /g]",""));
+						console.log(json.celular.replaceAll("[^A-Za-z0-9/ /g]",""));
+						$('#telefono').val(json.telefono);
+						$("#direccion").select2('trigger', 'select', {
+							data: { id: json.id_direccion, text: json.direccion }
+						});
+						$('#nro_casa').val(json.nro_casa);
+						$('#ubicacion_map').html(json.ubicacion_uno);
+						$('#hidden_ubicacion_map').val(json.ubicacion_uno);
+
+					}else{
+						$("#spin_ruc").hide();
+					}
+				},
+				error: function (jqXhr) {
+					$("#spin_ruc").hide();
+					alertDismissJS('No se ha encontrado usuario registrado, complete los campos manualmente', "ok");
+				}
+			});
+		}
+	}
+
+
+
+	function buscarCI(){
+		$.ajax({
+			dataType: 'json', async: true, cache: false, url: 'inc/pedidos-data.php', timeout:10000, type: 'POST', data: {q:'buscar_ci', ci: $("#ruc").val()},
+			beforeSend: function(){
+				$("#spin_ruc").show();
+			},
+			success: function (json){
+				$("#spin_ruc").hide();
+				$('#razon_social').val(json.nombre);
+				$('#telefono').val("");
+				$('#direccion').val("");
+			},
+			error: function (jqXhr) {
+				$("#spin_ruc").hide();
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+	}
+
+
+	// function printDiv(nombreDiv) {
+
+	// 	var contenido= document.getElementById(nombreDiv).innerHTML;
+	// 	var contenidoOriginal= document.body.innerHTML;
+	// 	document.body.innerHTML = contenido;
+	// 	window.print();
+	// 	// document.body.innerHTML = contenidoOriginal;
+	// 	// location.reload();
+	// 	// $('#modal_codigo_qr').modal('hide');
+
+	// }
+
+    function printDiv(contenido) {
+
+        var ficha = document.getElementById(contenido);
+        var ventanaImpresion = window.open(' ', 'Imprimir QR', 'width=900,height=620,scrollbars=NO');
+
+        ventanaImpresion.document.write(ficha.innerHTML);
+        ventanaImpresion.document.close();
+        ventanaImpresion.print();
+        ventanaImpresion.close();
+
+		// var qr = document.getElementById('qrcode2').innerHTML = '';
+		// $('#modal_codigo_qr').modal('hide');
+    }
+
+
+
+	//LOTES
+    function lotes() {
+        $lotes = $('#nro_lote').select2({
+            dropdownParent: $("#modal_principal"),
+            placeholder: 'Buscar Lote',
+            language: "es",
+            theme: "bootstrap4",
+            width: 'style',
+            allowClear: true,
+            selectOnClose: false,
+            dropdownPosition: 'below',
+            //minimumInputLength: 2,
+            //minimumResultsForSearch: 5,
+            ajax: {
+                url: 'inc/pedidos-data.php',
+                dataType: 'json',
+                delay: 50,
+                data: function(params) {
+                    return { q: 'buscar_lotes', term: params.term, page: params.page || 1 }
+                },
+                processResults: function(data, params) {
+                    params.page = params.page || 1;
+                    return {
+                        results: $.map(data, function(obj) { return { id: obj.id_lote, text: obj.id_lote+' - '+obj.encargado }; }),
+                        pagination: { more: (params.page * 5) <= data[0].total_count }
+                    };
+                },
+                cache: true
+            }
+        });
+
+    }
+	lotes();
+
+
+	//REPARTIDORES
+		function repartidores() {
+				$proveedor = $('#proveedor').select2({
+						dropdownParent: $("#modal_principal"),
+						placeholder: 'Buscar Repartidor',
+						language: "es",
+						theme: "bootstrap4",
+						width: 'style',
+						allowClear: true,
+						selectOnClose: false,
+						dropdownPosition: 'above',
+						//minimumInputLength: 2,
+						//minimumResultsForSearch: 5,
+						ajax: {
+								url: 'inc/pedidos-data.php',
+								dataType: 'json',
+								delay: 50,
+								data: function(params) {
+										return { q: 'buscar_repartidor', term: params.term, page: params.page || 1 }
+								},
+								processResults: function(data, params) {
+										params.page = params.page || 1;
+										return {
+												results: $.map(data, function(obj) { return { id: obj.id_repartidor, text: obj.proveedor }; }),
+												pagination: { more: (params.page * 5) <= data[0].total_count }
+										};
+								},
+								cache: true
+						}
+				});
+
+		}
+	repartidores();
+
+
+
+
+	//AUTO COMPLETAR ENTIDAD
+    $('#nro_lote').on('keyup change', function(e) {
+        var lote = "";
+        if ($lotes) lote = $("#nro_lote option:selected").text();
+		// console.log(lote);
+
+		buscarEntidad(lote);
+		buscarFechaTope(lote);
+    });
+
+	function buscarFechaTope(id) {
+		if ($("#nro_lote").val()){
+			// console.log($("#nro_lote").val());
+
+			$.ajax({
+				dataType: 'json', async: true, cache: false, url: 'inc/pedidos-data.php', timeout:10000, type: 'POST', data: {q:'buscar_fecha_tope', id: id},
+
+				success: function (json){
+					$("#fecha_tope").attr("type", "text");
+					$('#fecha_tope').val(json.fecha_tope);
+					//$('#fecha_tope').attr("readonly", "readonly");
+					console.log(json.fecha_tope);
+
+
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+		}
+	}
+
+
+	function buscarEntidad(id) {
+		if ($("#nro_lote").val()){
+			// console.log($("#nro_lote").val());
+
+			$.ajax({
+				dataType: 'json', async: true, cache: false, url: 'inc/pedidos-data.php', timeout:10000, type: 'POST', data: {q:'buscar_entidad', id: id},
+
+				success: function (json){
+					$('#entidad').val(json.razon_social);
+					$("fecha_tope").prop('disabled', true);
+					console.log('xd');
+
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+		}
+	}
+
+	//SELECT DE DIRECCION MODAL PRINCIPAL
+	function direccion() {
+		$direccion = $('#direccion').select2({
+            dropdownParent: $("#modal_principal"),
+            placeholder: 'Buscar Direccion',
+            language: "es",
+            theme: "bootstrap4",
+            width: 'style',
+            allowClear: true,
+            selectOnClose: false,
+            dropdownPosition: 'below',
+            //minimumInputLength: 2,
+            //minimumResultsForSearch: 5,
+            ajax: {
+                url: 'inc/pedidos-data.php?q=ver',
+                dataType: 'json',
+                delay: 50,
+                data: function(params) {
+                    return { q: 'buscar_direccion', term: params.term, page: params.page || 1 }
+                },
+                processResults: function(data, params) {
+                    params.page = params.page || 1;
+                    return {
+                        results: $.map(data, function(obj) { return { id: obj.id_direccion, text: obj.direccion }; }),
+                        pagination: { more: (params.page * 5) <= data[0].total_count }
+                    };
+                },
+                cache: true
+            }
+        });
+	}
+	direccion();
+
+	$('#direccion').on('keyup change', function (e) {
+		id_direccion = $(this).val();
+		completarZona(id_direccion);
+
+    });
+
+	function completarZona(id_direccion){
+		// console.log(id_direccion);
+		//buscar zona del direccion seleccionado
+		$.ajax({
+			dataType: 'json', async: true, cache: false, url: 'inc/pedidos-data.php', timeout:10000, type: 'POST', data: {q:'buscar_zona_completar', id: id_direccion},
+
+			success: function (json){
+				$('#zona2').val(json.id_zona);
+				$('#nro_casa').val(json.nro_casa);
+				$("#zona").select2('trigger', 'select', {
+					data: { id: json.id_zona, text: json.zona }
+				});
+				$("#zona").attr("disabled", "disabled");
+				$("#entidad").attr("disabled", "disabled");
+				$("#pac-input").val(json.direccion);
+
+			},
+			error: function (jqXhr) {
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+    }
+
+
+	//SELECT DE ZONAS MODAL PRINCIPAL
+	function zona() {
+            $zona = $('#zona').select2({
+                dropdownParent: $("#modal_principal"),
+                placeholder: 'Buscar Zona',
+                language: "es",
+                theme: "bootstrap4",
+                width: 'style',
+                allowClear: true,
+                selectOnClose: false,
+                dropdownPosition: 'below',
+                //minimumInputLength: 2,
+                //minimumResultsForSearch: 5,
+                ajax: {
+                    url: 'inc/pedidos-data.php',
+                    dataType: 'json',
+                    delay: 50,
+                    data: function(params) {
+                        return { q: 'buscar_zona', term: params.term, page: params.page || 1 }
+                    },
+                    processResults: function(data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: $.map(data, function(obj) { return { id: obj.id_zona, text: obj.zona }; }),
+                            pagination: { more: (params.page * 5) <= data[0].total_count }
+                        };
+                    },
+                    cache: true
+                }
+            });
+        }
+        zona();
+
+	//SELECT DE ZONA MODAL CARGA DE DIRECCION
+	function zona_carga() {
+       $zona_carga = $('#zona_carga').select2({
+            dropdownParent: $('#modal_direccion'),
+            placeholder: 'Buscar Zona',
+            allowClear: true,
+            language: "es",
+            theme: "bootstrap4",
+            width: 'style',
+            selectOnClose: false,
+            dropdownPosition: 'below',
+            //minimumInputLength: 1,
+            //maximumResultsForSearch: 10,
+            ajax: {
+                    url: 'inc/pedidos-data.php',
+                    dataType: 'json',
+                    delay: 50,
+                    data: function(params) {
+                        return { q: 'buscar_zona', term: params.term, page: params.page || 1 }
+                    },
+                    processResults: function(data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: $.map(data, function(obj) { return { id: obj.id_zona, text: obj.zona }; }),
+                            pagination: { more: (params.page * 5) <= data[0].total_count }
+                        };
+                    },
+                    cache: true
+                }
+        });
+    }
+	zona_carga();
+
+	//CARGA DE DIRECCION
+    $("#form_direccion").submit(function(e) {
+        e.preventDefault();
+        var data = $(this).serializeArray();
+				$.ajax({
+					dataType: 'json',
+					async: true,
+					cache: false,
+					url: 'inc/pedidos-data.php?q=cargar_direccion',
+					timeout:10000,
+					type: 'POST',
+					data: data,
+					success: function (json){
+						$('#modal_direccion').modal('hide');
+
+						$("#direccion").select2('trigger', 'select', {
+							data: { id: json[0].id_direccion, text: json[0].direccion }
+						});
+
+					},
+					error: function (jqXhr) {
+						alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+					}
+				});
+    });
+
+
+
+
+
+		var map;
+		// COORDENADAS GRAN ASUNCION
+		var pos = {lat: -25.3198336, lng:-57.5537152}
+		var marcadores = [];
+
+		function initMap() {
+					  const map = new google.maps.Map(document.getElementById("map"), {
+					    center: pos,
+					    zoom: 12,
+					    mapTypeId: "roadmap"
+					  });
+					  // Create the search box and link it to the UI element.
+					  const input = document.getElementById("pac-input");
+					  const searchBox = new google.maps.places.SearchBox(input);
+					  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+					  // Bias the SearchBox results towards current map's viewport.
+					  map.addListener("bounds_changed", () => {
+					    searchBox.setBounds(map.getBounds());
+					  });
+					  let markers = [];
+					  // Listen for the event fired when the user selects a prediction and retrieve
+					  // more details for that place.
+					  searchBox.addListener("places_changed", () => {
+					    const places = searchBox.getPlaces();
+
+					    if (places.length == 0) {
+					      return;
+					    }
+					    // Clear out the old markers.
+					    markers.forEach(marker => {
+					      marker.setMap(null);
+					    });
+					    markers = [];
+					    // For each place, get the icon, name and location.
+					    const bounds = new google.maps.LatLngBounds();
+					    places.forEach(place => {
+					      if (!place.geometry) {
+					        console.log("Returned place contains no geometry");
+					        return;
+					      }
+					      const icon = {
+					        url: place.icon,
+					        size: new google.maps.Size(71, 71),
+					        origin: new google.maps.Point(0, 0),
+					        anchor: new google.maps.Point(17, 34),
+					        scaledSize: new google.maps.Size(25, 25)
+					      };
+					      // Create a marker for each place.
+					      markers.push(
+					        new google.maps.Marker({
+					          map,
+					          icon,
+					          title: place.name,
+					          position: place.geometry.location
+					        })
+					      );
+
+					      if (place.geometry.viewport) {
+					        // Only geocodes have viewport.
+					        bounds.union(place.geometry.viewport);
+					      } else {
+					        bounds.extend(place.geometry.location);
+					      }
+					    });
+					    map.fitBounds(bounds);
+					  });
+								// Create the initial InfoWindow.
+						   var infoWindow = new google.maps.InfoWindow(
+						       {content: 'Busca la dirección y haz click en el mapa!', position: pos});
+						   infoWindow.open(map);
+
+						  // Configure the click listener.
+						   map.addListener('click', function(mapsMouseEvent) {
+						    // Close the current InfoWindow.
+						     infoWindow.close();
+
+						    // Create a new InfoWindow.
+						     infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+						     infoWindow.setContent(mapsMouseEvent.latLng.toString());
+						     infoWindow.open(map);
+
+									ubicacion_click = mapsMouseEvent.latLng.toString();
+									$('#establecer_pin_point').prop('disabled', false);
+									console.log(ubicacion_click);
+
+
+						  });
+
+
+
+					}
+
+			// function initMap() {
+			// 		map = new google.maps.Map(document.getElementById('map'), {
+			// 				center: new google.maps.LatLng(pos),
+			// 				zoom: 12
+			// 		});
+			// 		// Create the initial InfoWindow.
+      //    var infoWindow = new google.maps.InfoWindow(
+      //        {content: 'Busca la dirección y haz click en el mapa!', position: pos});
+      //    infoWindow.open(map);
+			//
+      //   // Configure the click listener.
+      //    map.addListener('click', function(mapsMouseEvent) {
+      //     // Close the current InfoWindow.
+      //      infoWindow.close();
+			//
+      //     // Create a new InfoWindow.
+      //      infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+      //      infoWindow.setContent(mapsMouseEvent.latLng.toString());
+      //       infoWindow.open(map);
+			// 		  var ubicacion_click = mapsMouseEvent.latLng.toString();
+			// 			console.log(ubicacion_click);
+      //   });
+      // }
+
+
+
+
+
+
+
+
+
+
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1NW86t_rj3bXEDBYplwbqE4ufPJohf34&sensor=false&callback=initMap&libraries=places">
+</script>
+</body>
+</html>

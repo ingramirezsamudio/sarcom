@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Rastrear Envio - SARCOM</title>
+	<style type="text/css">
+
+	:root {
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --gray-dark: #343a40;
+	  --blue: #009efb;
+	  --indigo: #6610f2;
+	  --purple: #7460ee;
+	  --pink: #e83e8c;
+	  --red: #f62d51;
+	  --orange: #fb9678;
+	  --yellow: #ffbc34;
+	  --green: #36bea6;
+	  --teal: #20c997;
+	  --cyan: #01c0c8;
+	  --white: #fff;
+	  --gray: #6c757d;
+	  --secondary: #f8f9fa;
+	  --success: #006666;
+	  --success_hover: #004040;
+	  --info: #00732d;
+	  --warning: #d16901;
+	  --warning_hover: #a35201;
+	  --default: #949494;
+	  --default_hover: #7e7e7e;
+	  --danger: #c72344;
+	  --light: #f8f9fa;
+	  --dark: #343a40;
+	  --cyan: #01c0c8;
+	  --purple: #7460ee;
+	  --primary: #102a83;
+	  --primary_hover: #00732d;
+	  --focus: 0 0 0 2px rgba(84, 38, 147, 0.3);
+	  --breakpoint-xs: 0;
+	  --breakpoint-sm: 576px;
+	  --breakpoint-md: 768px;
+	  --breakpoint-lg: 992px;
+	  --breakpoint-xl: 1600px;
+	  --font-family-sans-serif: 'Rubik', sans-serif;
+	  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+	};
+
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+
+	<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+	<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+	<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+	<script src="dist/js/bootstrap-table/extensions/mobile/bootstrap-table-mobile.js"></script>
+	<script src="dist/js/qrcode.js" type="text/javascript" ></script>
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+    	<!--include topbar -->
+    	<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<!-- ============================================================== -->
+				<!-- Logo -->
+				<!-- ============================================================== -->
+				<!--<div class="navbar-header">
+					<a class="navbar-brand" href="index">
+						<b><img src="<?php echo $logo_icono; ?>" alt="homepage" class="dark-logo" /></b>
+						<span>
+							<img src="<?php echo $logo_texto; ?>" alt="homepage" class="dark-logo" />
+							<img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+						</span>
+					</a>
+				</div>-->
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+							<form class="app-search">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+							</form>
+						</li>-->
+						<li class="nav-item">
+							<span class="titulo">Rastrear Envio</span>
+						</li>
+					</ul>
+					<!-- <?php //echo $menu_central; ?> -->
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 class="m-b-0">Usuario</h4>
+										<!--<p class=" m-b-0">varun@gmail.com</p>-->
+									</div>
+								</div>
+								<!--<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>-->
+								<!-- <a class="dropdown-item" href="<?php echo url();?>/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</a> -->
+								<!--<div class="dropdown-divider"></div>
+								<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>-->
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="aa"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+						<form class="form-inline" id="formulario" method="post" enctype="multipart/form-data" action="">
+							<input id="actualizar" type="hidden" name="actualizar" value="">
+                            <!-- <div class="form-group mb-3">
+                                <label for="ruc" class="sr-only">RUC/CI</label>
+                                <input type="text" class="form-control form-control-sm" id="ruc" name="ruc" placeholder="RUC/CI" required>
+                            </div> -->
+                            <div class="form-group mb-3">
+                                <label for="pin" class="sr-only">PIN</label>
+                                <input type="text" class="form-control form-control-sm" id="pin" name="pin" placeholder="PIN" required>
+                            </div>
+							<button id="buscar" type="submit" class="btn btn-primary btn-sm mb-3"><i class="fa fa-search"></i> Buscar</button>
+							<button id="act" type="button" class="btn btn-success btn-sm mb-3"><i class="fa fa-sync-alt"></i> Actualizar</button>
+                        </form>
+                    </div>
+
+                    <div id="content-mapa">
+                        <div id="map" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div><!-- End Page Content -->
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+    </div><!-- End Wrapper -->
+		<a href="#"></a>
+<script type="text/javascript">
+$(document).ready( function () {
+	//verificar login
+	if (localStorage.getItem("id_usuario")) {
+		console.log('esta logueado');
+		//location.replace("inicio.html");
+	}else {
+		console.log('NO esta logueado');
+		//location.replace("login.html");
+	}
+
+	//definir tipo de usuario
+	if (localStorage.getItem("tipo_usuario")=='superadmin') {
+		tipo_usuario = 'superadmin';
+	}else if (localStorage.getItem("tipo_usuario")=='admin') {
+		tipo_usuario = 'admin';
+	}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+		tipo_usuario = 'proveedor';
+	}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+		tipo_usuario = 'cliente';
+	}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+		tipo_usuario = 'encargado';
+	}
+	else {
+		tipo_usuario = 'visitante';
+	};
+
+
+	//ajax para el leftbar
+	$.ajax({
+		dataType: 'html',
+		async: true,
+		type: 'POST',
+		url: 'inc/leftbar-data.php',
+		cache: false,
+		data: {q: tipo_usuario},
+		success: function (data, status, xhr) {
+			var n = data.toLowerCase().indexOf("error");
+			if (n == -1) {
+				$('#sidebarnav').html(data);
+				cargarScriptMenu();
+			}else{
+				alertDismissJS(data, "error");
+			}
+		},
+		error: function (jqXhr) {
+			alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+		}
+	});
+});
+
+function cargarScriptMenu() {
+	let scriptActual = document.getElementById('script');
+	let nuevoScript = document.createElement('script');
+	nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+	document.head.replaceChild(nuevoScript, scriptActual);
+}
+
+function logout(){
+		localStorage.clear();
+		sessionStorage.clear();
+		location.replace('login.html');
+}
+
+    //Altura de tabla automatica
+	$(document).ready(function () {
+        // Tamaño del mapa al cargar
+        $('#content-mapa').css('height', $(window).height()-170 + "px");
+        $('#content-mapa').css('width', "100%");
+
+        // Adapta el mapa al redimensionar
+		$(window).bind('resize', function(e) {
+            if (window.RT) clearTimeout(window.RT);
+            window.RT = setTimeout(function() {
+                $('#content-mapa').css('height', $(window).height()-170 + "px");
+                // $("#tabla").bootstrapTable('refreshOptions', {
+                // 	height: $(window).height()-90,
+                // 	pageSize: Math.floor(($(window).height()-90)/50),
+                // });
+            }, 100);
+		});
+	});
+
+	var data;
+
+	$('#buscar').click(function() {
+		$('#actualizar').val("");
+	});
+
+	$('#act').click(function() {
+		$('#actualizar').val("si");
+		$("#formulario").submit();
+	});
+
+    //BUSCA LA UBICACION ACTUAL DEL PEDIDO
+	$("#formulario").submit(function(e) {
+		e.preventDefault();
+
+		if ($('#actualizar').val() == "") {
+			data = $(this).serializeArray();
+		}
+        $.ajax({
+			url: 'inc/pedidos-data.php?q=rastrear_pedido',
+			dataType: 'json',
+			type: 'post',
+			contentType: 'application/x-www-form-urlencoded',
+			data: data,
+			beforeSend: function(){
+				NProgress.start();
+			},
+			success: function(json, textStatus, jQxhr){
+				NProgress.done();
+                var n = json.estatus.toLowerCase().indexOf("error");
+				if (n == -1) {
+					alertDismissJS(json.estatus, "ok");
+                    mostrarEnvio(parseFloat(json.latitud), parseFloat(json.longitud));
+				} else {
+					alertDismissJS(json.estatus, "error");
+				}
+			},
+			error: function(jqXhr, textStatus, errorThrown){
+				NProgress.done();
+				alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+			}
+		});
+	});
+
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('map'), {
+			center: new google.maps.LatLng(-25.2876536, -57.6115997),
+			// center: {lat: 25.2966809, lng: -57.668129},
+			zoom: 15
+		});
+	}
+
+    function mostrarEnvio(latitud, longitud) {
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 15
+		});
+		infoWindow = new google.maps.InfoWindow;
+
+		var pos = {lat: latitud, lng: longitud};
+
+		infoWindow.setPosition(pos);
+		infoWindow.setContent('Su proveedor está aquí');
+		infoWindow.open(map);
+		map.setCenter(pos);
+    }
+
+
+
+
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1NW86t_rj3bXEDBYplwbqE4ufPJohf34&callback=initMap">
+</script>
+</body>
+</html>

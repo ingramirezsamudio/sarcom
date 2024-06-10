@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Ver Datos - SARCOM</title>
+	<style type="text/css">
+		:root {
+      --blue: #009efb;
+      --indigo: #6610f2;
+      --purple: #7460ee;
+      --pink: #e83e8c;
+      --red: #f62d51;
+      --orange: #fb9678;
+      --yellow: #ffbc34;
+      --green: #36bea6;
+      --teal: #20c997;
+      --cyan: #01c0c8;
+      --white: #fff;
+      --gray: #6c757d;
+      --gray-dark: #343a40;
+      --blue: #009efb;
+      --indigo: #6610f2;
+      --purple: #7460ee;
+      --pink: #e83e8c;
+      --red: #f62d51;
+      --orange: #fb9678;
+      --yellow: #ffbc34;
+      --green: #36bea6;
+      --teal: #20c997;
+      --cyan: #01c0c8;
+      --white: #fff;
+      --gray: #6c757d;
+      --secondary: #f8f9fa;
+      --success: #006666;
+      --success_hover: #004040;
+      --info: #00732d;
+      --warning: #d16901;
+      --warning_hover: #a35201;
+      --default: #949494;
+      --default_hover: #7e7e7e;
+      --danger: #c72344;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --cyan: #01c0c8;
+      --purple: #7460ee;
+      --primary: #102a83;
+      --primary_hover: #00732d;
+			--focus: 0 0 0 2px rgba(84,38,147,0.3);
+			--breakpoint-xs: 0;
+			--breakpoint-sm: 576px;
+			--breakpoint-md: 768px;
+			--breakpoint-lg: 992px;
+			--breakpoint-xl: 1600px;
+			--font-family-sans-serif: 'Rubik', sans-serif;
+			--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+		}
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+	<!-- fin header.php -->
+<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+<!-- <script type="text/javascript" src="dist/js/jsignature/flashcanvas.js"></script> -->
+<script src="dist/js/jsignature/jSignature.min.js"></script>
+<script src="dist/js/jsignature/jSignature.min.noconflict.js"></script>
+<script src="dist/js/jsignature/flashcanvas.js"></script>
+<!-- <script src="dist/js/jsignature/flashcanvas.swf"></script> -->
+
+
+<!-- Typehead -->
+<script type="text/javascript" src="dist/js/typeahead/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="dist/js/typeahead/handlebars.min.js"></script>
+<link href="dist/js/typeahead/typeahead.css" rel="stylesheet">
+
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+		<!-- topbar.php -->
+		<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+
+				<div class="navbar-collapse">
+
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+
+						<li class="nav-item">
+							<span class="titulo">Ver Datos</span>
+
+						</li>
+					</ul>
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 id="nombre_usuario" class="m-b-0">Usuario</h4>
+									</div>
+								</div>
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+								<!--<div class="dropdown-divider"></div>
+								<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>-->
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- fin topbar.php -->
+		<!-- leftbar.php -->
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="SARCOM"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+			<!-- End Sidebar navigation -->
+			</div>
+		<!-- End Sidebar scroll-->
+		</aside>
+		<!-- fin leftbar.php -->
+        <div class="page-wrapper">
+            <div class="container-fluid mt-3">
+
+
+
+									<div class="form-group text-center">
+
+										<form id="formulario" class="text-center" enctype="multipart/form-data">
+
+										<div id="carrusel" class="carousel slide">
+											<div class="carousel-inner">
+												<div class="carousel-item active">
+
+													<div class="col-md-12 col-sm-12">
+														<h3><b>Información del Ticket</b></h3>
+														<hr>
+													</div>
+
+													<div class="row mt-3">
+                            <input type="hidden" id="id_ticket" name="id_ticket">
+                            <input type="hidden" id="id_cupos_proveedor" name="id_cupos_proveedor">
+                            <input type="hidden" id="id_chofer" name="id_chofer">
+                            <input type="hidden" id="estado" name="estado">
+                            <input type="hidden" id="id_cupo" name="id_cupo">
+                            <input type="hidden" id="id_proveedor" name="id_proveedor">
+                            <input type="hidden" id="id_cliente" name="id_cliente">
+                            <input type="hidden" id="id_puerto" name="id_puerto">
+                            <input type="hidden" id="id_cliente" name="id_cliente">
+
+                          <div class="col-md-12 col-sm-12">
+														<h3 class=""><b>Puerto :</b></h3>
+                            <h2 id="puerto"></h2>
+													</div>
+                          <div class="col-md-4 col-sm-12 mt-2">
+                            <h3 class=""><b>Fecha Inicio :</b></h3>
+                            <h2 id="fecha_inicio"></h2>
+                          </div>
+                          <div class="col-md-4 col-sm-12 mt-2">
+                            <h3 class=""><b>Estado :</b></h3>
+                            <h2 id="estado_h"></h2>
+                          </div>
+                          <div class="col-md-4 col-sm-12 mt-2">
+                            <h3 class=""><b>Fecha Fin :</b></h3>
+                            <h2 id="fecha_fin"></h2>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 mt-2">
+                            <hr>
+                          </div>
+
+													<div class="col-md-4 col-sm-12 mt-4">
+														<h4 class=""><b>Chofer :</b></h4>
+                            <h5 id="chofer"></h5>
+													</div>
+                          <div class="col-md-4 col-sm-12 mt-4">
+                            <h4 class=""><b>C.I. Chofer :</b></h4>
+                            <h5 id="ci_chofer"></h5>
+                          </div>
+                          <div class="col-md-4 col-sm-12 mt-4">
+                            <h4 class=""><b>Telefono del Chofer :</b></h4>
+                            <h5 id="telefono_chofer"></h5>
+                          </div>
+                          <div class="col-md-12 col-sm-12 mt-2 mb-4">
+                            <h3 class=""><b>Chapa :</b></h3>
+                            <h2 id="chapa"></h2><hr>
+                          </div>
+
+                          <div class="col-md-4 col-sm-12">
+                            <h4 class=""><b>Proveedor :</b></h4>
+                            <h5 id="proveedor"></h5>
+                          </div>
+                          <div class="col-md-4 col-sm-12">
+                            <h4 class=""><b>RUC del Proveedor :</b></h4>
+                            <h5 id="ruc_proveedor"></h5>
+                          </div>
+                          <div class="col-md-4 col-sm-12">
+                            <h4 class=""><b>Telefono del Proveedor :</b></h4>
+                            <h5 id="telefono_proveedor"></h5>
+                          </div>
+                          <div class="col-md-6 col-sm-12 mt-4 mb-4">
+                            <h4 class=""><b>Correo del Proveedor :</b></h4>
+                            <h5 id="correo_proveedor"></h5>
+                          </div>
+                          <div class="col-md-6 col-sm-12 mt-4 mb-4">
+                            <h4 class=""><b>Encargado del Proveedor :</b></h4>
+                            <h5 id="encargado_proveedor"></h5>
+                          </div>
+
+
+
+													<div class="col-md-12 col-sm-12">
+														<hr>
+														<div class="row">
+															<div class="col-md-12 col-sm-12">
+																<button class="btn btn-info btn-lg mt-3" type="button" id="btn_reporte">Reportar</button>
+																<button class="btn btn-primary btn-lg mt-3" type="submit" id="btn_ingreso">Registrar Ingreso</button>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											<div>
+										<div>
+										</form>
+
+
+										<!-- MODAL FIRMA -->
+										<div class="modal fade" id="modal_firma" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="modalLabel_codigo_qr">FIRMA</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<div>
+															<div id="signature"></div>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button class="btn btn-secondary" type="button" name="borrar" id="borrar">Borrar</button>
+														<button type="button" class="btn btn-primary" data-dismiss="modal" id="cerra-modal">Listo</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- MODAL REGISTRO NO ENTREGADO -->
+										<div class="modal fade" id="modal_no_entregado" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-md2 modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="modalLabel_codigo_qr">Registrar como no entregado</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<form id="form_no_entrega" class="text-left" enctype="multipart/form-data">
+													<div class="modal-body">
+															<h3>Motivo</h3>
+															<hr>
+															<div class="col-md-12 col-sm-12 mt-3">
+																<div class="custom-control custom-radio">
+																	<input type="radio" id="motivo1" name="motivo" class="custom-control-input" value="No se encuentra el titular" checked>
+																	<label class="custom-control-label" for="motivo1">No se encuentra el titular</label>
+																</div>
+																<div class="custom-control custom-radio">
+																	<input type="radio" id="motivo2" name="motivo" class="custom-control-input" value="Direcciónincorrecta">
+																	<label class="custom-control-label" for="motivo2">Direcciónincorrecta</label>
+																</div>
+																<div class="custom-control custom-radio">
+																	<input type="radio" id="motivo3" name="motivo" class="custom-control-input" value="0">
+																	<label class="custom-control-label" for="motivo3">Otro</label>
+																</div>
+															</div>
+															<div class="form-group col-md-12 col-sm-12 mt-3">
+																<input disabled class="form-control input-sm" id="otro_motivo" name="otro_motivo" type="text" autocomplete="off" placeholder="Añadir otro motivo">
+															</div>
+														</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+															<button type="submit" class="btn btn-success">Registrar</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+
+										<!-- MODAL GUARDAR UBICACION -->
+										<div class="modal fade" id="modal_ubicacion" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="modal_label_ubicacion">Ubicacion Actual</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<div id="map" class="col-md-12 col-sm-12" style="height: 500px;"></div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+														<button type="button" class="btn btn-success" data-dismiss="modal" id="registrar_ubi">Guardar</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+       <!-- <?phpinclude 'footer.php'; ?> -->
+    </div><!-- End Wrapper -->
+		<script type="text/javascript">
+		$(document).ready( function () {
+			//verificar login
+			if (localStorage.getItem("id_usuario")) {
+				console.log('esta logueado');
+				//location.replace("inicio.html");
+			}else {
+				console.log('NO esta logueado');
+				location.replace("login.html");
+			}
+
+			//definir tipo de usuario
+			if (localStorage.getItem("tipo_usuario")=='superadmin') {
+				tipo_usuario = 'superadmin';
+			}else if (localStorage.getItem("tipo_usuario")=='admin') {
+				tipo_usuario = 'admin';
+			}else if (localStorage.getItem("tipo_usuario")=='repartidor') {
+				tipo_usuario = 'repartidor';
+			}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+				tipo_usuario = 'cliente';
+			}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+				tipo_usuario = 'encargado';
+      }else if (localStorage.getItem("tipo_usuario")=='portero') {
+        tipo_usuario = 'portero';
+      }
+			else {
+				tipo_usuario = 'visitante';
+			};
+
+
+			//ajax para el leftbar
+			$.ajax({
+				dataType: 'html',
+				async: true,
+				type: 'POST',
+				url: 'inc/leftbar-data.php',
+				cache: false,
+				data: {q: tipo_usuario},
+				success: function (data, status, xhr) {
+					var n = data.toLowerCase().indexOf("error");
+					if (n == -1) {
+						$('#sidebarnav').html(data);
+						cargarScriptMenu();
+					}else{
+						alertDismissJS(data, "error");
+					}
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+		});
+		$('#nombre_usuario').html(localStorage.getItem("nombre_usuario"));
+
+		function cargarScriptMenu() {
+			let scriptActual = document.getElementById('script');
+			let nuevoScript = document.createElement('script');
+			nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+			document.head.replaceChild(nuevoScript, scriptActual);
+		}
+
+
+		function logout(){
+				localStorage.clear();
+				sessionStorage.clear();
+				location.replace('login.html');
+		}
+				$(document).ready(function() {
+					$('#id_ticket').val(get('id_ticket'));
+          console.log(get('id_ticket'));
+					$('#nombre_apellido').val(get('nombre'));
+					if (get('id_ticket')) {
+						$.ajax({
+							dataType: 'json', async: true, cache: false, url: 'inc/consulta-data.php', timeout:10000, type: 'POST', data: {q:'ver_datos', id_ticket: get('id_ticket'),portero_puerto: localStorage.getItem("portero_puerto") },
+							beforeSend: function(){
+							},
+							success: function (json){
+								if (json.mensaje=='NO CORRESPONDE AL PUERTO') {
+									alertDismissJS('NO CORRESPONDE AL PUERTO.', "error");
+									setTimeout(() => {
+										location.replace('escanear.html');
+									}, 3000);
+
+								}else {
+									$("#id_ticket").val(json[0].id_ticket);
+									$("#id_chofer").val(json[0].id_chofer);
+									$("#id_cupos_proveedor").val(json[0].id_cupos_proveedor);
+									$("#estado").val(json[0].estado);
+									$("#estado_h").html(json[0].estado);
+									if (json[0].estado=='UTILIZADO') {
+										$("#estado_h").css("background-color", "red");
+										$("#btn_ingreso").hide();
+									}else {
+										$("#estado_h").css("background-color", "cyan");
+									}
+									$("#id_cupo").val(json[0].id_cupo);
+									$("#id_proveedor").val(json[0].id_proveedor);
+									$("#id_cliente").val(json[0].id_cliente);
+									$("#id_puerto").val(json[0].id_puerto);
+									$("#puerto").html(json[0].puerto);
+									$("#fecha_inicio").html(json[0].fecha_inicio);
+									$("#fecha_fin").html(json[0].fecha_fin);
+									$("#chofer").html(json[0].chofer);
+									$("#ci_chofer").html(json[0].ci_chofer);
+									$("#chapa").html(json[0].chapa);
+									$("#telefono_chofer").html(json[0].telefono_chofer);
+									$("#proveedor").html(json[0].proveedor);
+									$("#ruc_proveedor").html(json[0].ruc_proveedor);
+									$("#telefono_proveedor").html(json[0].telefono_proveedor);
+									$("#correo_proveedor").html(json[0].correo_proveedor);
+									$("#encargado_proveedor").html(json[0].encargado_proveedor);
+								}
+
+
+
+							},
+							error: function (jqXhr) {
+								alertDismissJS('Han ocurrido problemas con la autenticación.', "error");
+								setTimeout(() => {
+									location.replace('escanear.html');
+								}, 3000);
+							}
+						});
+
+					}else {
+						console.log('NO hay ticket');
+						alertDismissJS('No se detecto ningun ticket.', "error");
+					}
+
+
+
+						// var signatureDiv = $("#signature").jSignature();
+						// $("#guardar").click(function(){
+						 $("#btn_foto_omitir").click(function(){
+
+						 });
+						 $("#btn_reporte").click(function(){
+							 swal({
+							 		title: "¿Desea reportar este Ticket?",
+							 		text: "Se enviarán los datos a Sarcom para su análisis.",
+							 		type: "warning",
+							 		showCancelButton: true,
+							 		confirmButtonColor: "var(--primary)",
+							 		confirmButtonText: "Reportar",
+							 		cancelButtonText: "Cancelar",
+							 		closeOnConfirm: false
+							 }, function(){
+							 		$.ajax({
+							 				dataType: 'html',
+							 				async: false,
+							 				type: 'POST',
+							 				url: 'inc/consulta-data.php',
+							 				cache: false,
+							 				data: {q: 'reportar', id_ticket: get('id_ticket'), puerto: localStorage.getItem("puerto")  },
+							 				beforeSend: function(){
+							 						NProgress.start();
+							 				},
+							 				success: function (data, status, xhr) {
+							 						var n = data.toLowerCase().indexOf("error");
+							 						if (n == -1) {
+							 								swal.close();
+							 								alertDismissJS(data, "ok");
+							 								NProgress.done();
+							 						}else{
+							 								alertDismissJS(data, "error");
+							 						}
+							 				},
+							 				error: function (jqXhr) {
+							 						alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+							 				}
+							 		});
+							 });
+						 });
+
+
+						$("#formulario").submit(function(e){
+									e.preventDefault();
+
+														//subir firma y actualizar datos de pedido
+														var formData = new FormData(this);
+                            formData.append('q', 'registrar_ingreso');
+
+
+														$.ajax({
+															dataType: 'html',
+															type: 'POST',
+															url: 'inc/consulta-data.php',
+															cache: false,
+															processData: false,
+                							contentType: false,
+
+															data: formData,
+															async: true,
+															beforeSend: function(){
+																NProgress.start();
+															},
+															success: function (data, status, xhr) {
+																var n = data.toLowerCase().indexOf("error");
+																NProgress.done();
+																if (n == -1) {
+																	alertDismissJS(data, "ok");
+                                  setTimeout(() => {
+                                    location.reload();
+																	}, 1000);
+																} else {
+																	alertDismissJS(data, "error");
+																}
+															},
+															error: function (xhr) {
+																console.log('NO');
+															}
+														});
+				     });
+
+
+
+
+
+
+
+
+
+
+
+
+		    	});
+
+				/**
+				* Obtiene informacion pasada por get
+				*
+				* Funciona igual que $_GET de php
+				* @param String name
+				* @return String
+				*/
+				function get(name) {
+					name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+					var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+					results = regex.exec(location.search);
+					return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+				}
+
+				// MODAL NO ENTREGA
+				$('#btn_no_entrega').click(function() {
+					$('#modal_no_entregado').modal('show');
+				});
+
+				// HABILITA CAMPO PARA AÑADIR OTRO MOTIVO
+				$('input[name="motivo"]').change(function() {
+					if ($('input[name="motivo"]:checked').val() == 0) {
+						$('#otro_motivo').prop('required', true);
+						$('#otro_motivo').prop('disabled', false);
+					} else {
+						$('#otro_motivo').prop('required', false);
+						$('#otro_motivo').prop('disabled', true);
+					}
+				});
+
+				// REGISTRAR NO ENTREGADO
+				$('#form_no_entrega').submit(function(e){
+					e.preventDefault();
+					var motivo = "";
+
+					if ($('input[name="motivo"]:checked').val() == 0) {
+						motivo = $('#otro_motivo').val();
+					} else {
+						motivo = $('input[name="motivo"]:checked').val();
+					}
+
+					$.ajax({
+						dataType: 'html',
+						type: 'POST',
+						url: 'inc/pedidos-data.php',
+						cache: false,
+						data: {q: 'registrar_no_entregado', motivo: motivo, id_pedido:$("#id_pedido").val(), ubicacion: ubicacion, ruc: get('ruc'), razon_social: get("nombre"), direccion:get("direccion"), zona:get("zona"), correo:get("correo") },
+						async: true,
+						beforeSend: function(){
+							// $("#mensaje_facturas").html("<img src='images/progress_bar.gif'>");
+						},
+						success: function (data, status, xhr) {
+							// $("#mensaje_facturas").html(data.mensaje);
+							var n = data.toLowerCase().indexOf("error");
+							if (n == -1) {
+								$('.carrusel-next').prop('disabled', true);
+								$('#btn_no_entrega').prop('disabled', true);
+								$('#modal_no_entregado').modal('hide');
+								alertDismissJS(data, "ok");
+								console.log('exito');
+							} else {
+								alertDismissJS(data, "error");
+							}
+						},
+						error: function (xhr) {
+							alertDismissJS("No se pudo completar la operación: " + xhr.status + " " + xhr.statusText, 'error');
+						}
+					});
+				});
+
+
+		</script>
+</body>
+</html>

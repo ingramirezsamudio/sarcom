@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon.png">
+    <title>Registrar entrega - SARCOM</title>
+	<style type="text/css">
+		:root {
+			--blue: #009efb;
+			--indigo: #6610f2;
+			--purple: #7460ee;
+			--pink: #e83e8c;
+			--red: #f62d51;
+			--orange: #fb9678;
+			--yellow: #ffbc34;
+			--green: #36bea6;
+			--teal: #20c997;
+			--cyan: #01c0c8;
+			--white: #fff;
+			--gray: #6c757d;
+			--gray-dark: #343a40;
+			--blue: #009efb;
+			--indigo: #6610f2;
+			--purple: #7460ee;
+			--pink: #e83e8c;
+			--red: #f62d51;
+			--orange: #fb9678;
+			--yellow: #ffbc34;
+			--green: #36bea6;
+			--teal: #20c997;
+			--cyan: #01c0c8;
+			--white: #fff;
+			--gray: #6c757d;
+			--secondary: #f8f9fa;
+			--success: #006666;
+			--success_hover: #004040;
+			--info: #00732d;
+			--warning: #d16901;
+			--warning_hover: #a35201;
+			--default: #949494;
+			--default_hover: #7e7e7e;
+			--danger: #c72344;
+			--light: #f8f9fa;
+			--dark: #343a40;
+			--cyan: #01c0c8;
+			--purple: #7460ee;
+			--primary: #102a83;
+			--primary_hover: #00732d;
+			--focus: 0 0 0 2px rgba(84,38,147,0.3);
+			--breakpoint-xs: 0;
+			--breakpoint-sm: 576px;
+			--breakpoint-md: 768px;
+			--breakpoint-lg: 992px;
+			--breakpoint-xl: 1600px;
+			--font-family-sans-serif: 'Rubik', sans-serif;
+			--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+		}
+	</style>
+	<script src="dist/js/jquery/jquery-3.2.1.min.js"></script>
+	<!-- Bootstrap popper Core JavaScript -->
+	<script src="dist/js/popper/popper.min.js"></script>
+    <script src="dist/js/bootstrap/js/bootstrap.min.js"></script>
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script id="script" src="dist/js/sidebarmenu.js?v=2"></script>
+	<script src="dist/js/jquery.easing.min.js"></script>
+	<script src="dist/js/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Sweet-Alert  -->
+	<link href="dist/js/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <script src="dist/js/sweetalert/sweetalert.min.js"></script>
+	<!-- TOAST -->
+	<link href="dist/js/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<script src="dist/js/toast-master/js/jquery.toast.js"></script>
+	<!-- Nprogress -->
+	<script src="dist/js/nprogress/nprogress.js"></script>
+	<link href="dist/js/nprogress/nprogress.css?v=1" rel="stylesheet">
+	<!-- Select2 -->
+	<link href="dist/js/select2/css/select2.min.css" rel="stylesheet">
+	<link href="dist/js/select2/css/select2-bootstrap4.min.css" rel="stylesheet">
+	<script src="dist/js/select2/js/select2.full.min.js"></script>
+	<script src="dist/js/select2/js/select2-dropdownPosition.js"></script>
+	<script src="dist/js/select2/js/i18n/es.js"></script>
+	<!-- Custom -->
+	<link href="dist/css/style.css?v=2" rel="stylesheet">
+	<link href="dist/css/custom.css?v=6" rel="stylesheet">
+	<script src="dist/js/custom.js?v=1"></script>
+	<!-- fin header.php -->
+<link rel="stylesheet" href="dist/js/bootstrap-table/bootstrap-table.css">
+<script src="dist/js/bootstrap-table/bootstrap-table.js"></script>
+<script src="dist/js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+<script src="dist/js/bootstrap-table/extensions/export/tableExport.js"></script>
+<script src="dist/js/bootstrap-table/locale/bootstrap-table-es-CL.min.js"></script>
+<!-- <script type="text/javascript" src="dist/js/jsignature/flashcanvas.js"></script> -->
+<script src="dist/js/jsignature/jSignature.min.js"></script>
+<script src="dist/js/jsignature/jSignature.min.noconflict.js"></script>
+<script src="dist/js/jsignature/flashcanvas.js"></script>
+<!-- <script src="dist/js/jsignature/flashcanvas.swf"></script> -->
+
+
+<!-- Typehead -->
+<script type="text/javascript" src="dist/js/typeahead/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="dist/js/typeahead/handlebars.min.js"></script>
+<link href="dist/js/typeahead/typeahead.css" rel="stylesheet">
+
+</head>
+
+<body class="skin-default-dark lock-nav fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Cargando Ñamandú...</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+		<!-- topbar.php -->
+		<header class="topbar">
+			<nav class="navbar top-navbar navbar-expand-md navbar-dark">
+				<!-- ============================================================== -->
+				<!-- Logo -->
+				<!-- ============================================================== -->
+				<!--<div class="navbar-header">
+					<a class="navbar-brand" href="index">
+						<b><img src="" alt="homepage" class="dark-logo" /></b>
+						<span>
+							<img src="" alt="homepage" class="dark-logo" />
+							<img src="dist/images/logo-light-text.png" class="light-logo" alt="homepage" />
+						</span>
+					</a>
+				</div>-->
+				<!-- ============================================================== -->
+				<!-- End Logo -->
+				<!-- ============================================================== -->
+				<div class="navbar-collapse">
+					<!-- ============================================================== -->
+					<!-- toggle and nav items -->
+					<!-- ============================================================== -->
+					<ul class="navbar-nav mr-auto">
+						<!-- This is  -->
+						<li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
+						<!-- ============================================================== -->
+						<!-- Search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+							<form class="app-search">
+								<input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a>
+							</form>
+						</li>-->
+						<li class="nav-item">
+							<span class="titulo">Registrar entrega</span>
+
+						</li>
+					</ul>
+					<ul class="navbar-nav my-lg-0">
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+						<!--<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+						</li>-->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="30"></a>
+							<div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+								<span class="with-arrow"><span class="bg-primary"></span></span>
+								<div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+									<div class=""><img src="dist/images/users/nobody.png" alt="user" class="img-circle" width="60"></div>
+									<div class="m-l-10">
+										<h4 class="m-b-0">Usuario</h4>
+										<!--<p class=" m-b-0">varun@gmail.com</p>-->
+									</div>
+								</div>
+								<!--<a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>-->
+								<button class="dropdown-item" href="" onclick="logout()"><i class="fa fa-power-off m-r-5 m-l-5"></i> Cerrar Sesión</button>
+								<!--<div class="dropdown-divider"></div>
+								<div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>-->
+							</div>
+						</li>
+						<!-- ============================================================== -->
+						<!-- User profile and search -->
+						<!-- ============================================================== -->
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- fin topbar.php -->
+		<!-- leftbar.php -->
+		<aside class="left-sidebar">
+			<div class="d-flex no-block nav-text-box align-items-center">
+				<span><img src="dist\images\logo-icon.png" alt="SARCOM"></span>
+				<a class="nav-lock waves-effect waves-dark ml-auto hidden-md-down" href="javascript:void(0)"><i class="mdi mdi-toggle-switch"></i></a>
+				<a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+			</div>
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+					<!-- se carga en el onload con ajax -->
+					</ul>
+				</nav>
+			<!-- End Sidebar navigation -->
+			</div>
+		<!-- End Sidebar scroll-->
+		</aside>
+		<!-- fin leftbar.php -->
+        <div class="page-wrapper">
+            <div class="container-fluid mt-3">
+                <div class="form-group text-center">
+
+                    <form id="formulario" class="text-center" enctype="multipart/form-data">
+                        <!-- pin -->
+                        <div>
+                            <div class="col-md-12 col-sm-12">
+                                <h3><b>Ingresar PIN para registrar entrega</b></h3>
+                                <hr>
+                            </div>
+                            <div style="margin:auto" class="col-md-6 col-sm-12 mt-2">
+                                <input class="form-control input-sm" type="password" name="pin" id="pin" autocomplete="off">
+                            </div>
+                            <hr class="mt-2">
+                            <div class="col-md-12 col-sm-12">
+                                <!-- <button class="btn btn-secondary btn-lg mt-3 carrusel-prev" type="button">Atras</button> -->
+                                <button id="verificar_pin" disabled class="btn btn-primary btn-lg mt-3" type="button">Acceder</i></button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div><!-- End Container fluid  -->
+        </div><!-- End Page wrapper  -->
+       <!-- <?phpinclude 'footer.php'; ?> -->
+    </div><!-- End Wrapper -->
+		<script type="text/javascript">
+		$(document).ready( function () {
+			//verificar login
+			if (localStorage.getItem("id_usuario")) {
+				console.log('esta logueado');
+				//location.replace("inicio.html");
+			}else {
+				console.log('NO esta logueado');
+				location.replace("login.html");
+			}
+			//definir tipo de usuario
+			if (localStorage.getItem("tipo_usuario")=='superadmin') {
+				tipo_usuario = 'superadmin';
+			}else if (localStorage.getItem("tipo_usuario")=='admin') {
+				tipo_usuario = 'admin';
+			}else if (localStorage.getItem("tipo_usuario")=='proveedor') {
+				tipo_usuario = 'proveedor';
+			}else if (localStorage.getItem("tipo_usuario")=='cliente') {
+				tipo_usuario = 'cliente';
+			}else if (localStorage.getItem("tipo_usuario")=='encargado') {
+				tipo_usuario = 'encargado';
+			}
+			else {
+				tipo_usuario = 'visitante';
+			};
+
+
+			//ajax para el leftbar
+			$.ajax({
+				dataType: 'html',
+				async: true,
+				type: 'POST',
+				url: 'inc/leftbar-data.php',
+				cache: false,
+				data: {q: tipo_usuario},
+				success: function (data, status, xhr) {
+					var n = data.toLowerCase().indexOf("error");
+					if (n == -1) {
+						$('#sidebarnav').html(data);
+						cargarScriptMenu();
+					}else{
+						alertDismissJS(data, "error");
+					}
+				},
+				error: function (jqXhr) {
+					alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+				}
+			});
+		});
+
+		function cargarScriptMenu() {
+			let scriptActual = document.getElementById('script');
+			let nuevoScript = document.createElement('script');
+			nuevoScript.src = 'dist/js/sidebarmenu.js?v=2';
+
+			document.head.replaceChild(nuevoScript, scriptActual);
+		}
+
+		function logout(){
+				localStorage.clear();
+				sessionStorage.clear();
+				location.replace('login.html');
+		}
+				$(document).ready(function() {
+
+					// valida pin en 6 digitos
+					$('#pin').on('keyup change', function() {
+						var pin_length = $('#pin').val().length;
+						if (pin_length == 6) {
+							$('#verificar_pin').prop('disabled', false);
+						} else {
+							$('#verificar_pin').prop('disabled', true);
+						}
+					});
+
+
+					$('#verificar_pin').click(function() {
+
+                        $.ajax({
+                            dataType: 'json', async: true,
+							cache: false,
+							url: 'https://frontliner.namandu.com/android/inc/pedidos-data.php',
+							timeout:10000,
+							type: 'POST',
+							data: {q:'verificar_pin_datos', pin:$('#pin').val()},
+
+                            success: function (json){
+								// console.log(json);
+								// console.log(json.id);
+
+								var nombre = json.razon_social;
+								var ruc = json.ruc;
+								var direccion = json.direccion;
+								var zona = json.zona;
+								var fecha_tope = json.fecha_tope;
+								var entidad = json.entidad;
+								var correo = json.correo;
+								var id_pedido = json.id;
+								var nro_casa = json.nro_casa;
+
+								var url = 'ver_data.html?q=ver_data&nombre='+nombre+'&ruc='+ruc+'&direccion='+direccion+'&zona='+zona+'&fecha_tope='+fecha_tope+'&entidad='+entidad+'&correo='+correo+'&id_pedido='+id_pedido+'&nro_casa='+nro_casa;
+
+								// console.log(url);
+								window.location = url;
+
+
+
+                            },
+                            error: function (jqXhr) {
+								alertDismissJS('PINincorrecto', "error");
+								$('#pin').val('')
+								$('#verificar_pin').prop('disabled', true);
+                            }
+
+                        });
+
+					});
+
+		    	});
+
+				// Acceso global
+				var ubicacion;
+
+				// DEBE IR EN CADA HTML PARA RASTREAR AL REPARTIDOR
+				// UBICACION DEL REPARTIDOR
+				function geo_success(position) {
+					// coordenadas de la ubicacion
+					var ubicacion = position.coords.latitude + ',' + position.coords.longitude;
+
+					$.ajax({
+						dataType: 'html',
+						async: true,
+						type: 'POST',
+						url: 'inc/repartidores-data.php',
+						cache: false,
+						// id_repartidor se debe obtener del proveedor logueado
+						data: {q: 'guardar_ubicacion',ubicacion: ubicacion , id_repartidor: localStorage.getItem("id_repartidor") },
+						success: function (data, status, xhr) {
+							var n = data.toLowerCase().indexOf("error");
+							if (n == -1) {
+								// console.log("ubicacion enviada al servidor : " + ubicacion);
+							}else{
+								alertDismissJS(data, "error");
+							}
+						},
+						error: function (jqXhr) {
+							alertDismissJS($(jqXhr.responseText).text().trim(), "error");
+						}
+					});
+				}
+
+				function geo_error(error) {
+					switch(error.code) {
+						case error.PERMISSION_DENIED:
+							alertDismissJS("Solicitud de geolocalización denegada, no se podra rastrear su ubicación", "error");
+						break;
+
+						case error.POSITION_UNAVAILABLE:
+							alertDismissJS("La información de ubicación no está disponible", "error");
+						break;
+
+						case error.TIMEOUT:
+							alertDismissJS("Tiempo de espera agotado. No se pudo obtener su ubicacion", "error");
+						break;
+
+						case error.UNKNOWN_ERROR:
+							alertDismissJS("Error no identificado", "error");
+						break;
+					}
+				}
+
+				if (navigator.geolocation) {
+					// se ejecuta cada vez que la ubicacion del proveedor cambie
+					if (localStorage.getItem("tipo_usuario")=='proveedor'){
+						var wpid = navigator.geolocation.watchPosition(geo_success, geo_error);
+					}
+				} else {
+					alertDismissJS("La geolocalización no es compatible con este navegador", "error");
+				}
+
+				// FIN UBICACION DEL REPARTIDOR
+
+
+		</script>
+</body>
+</html>
