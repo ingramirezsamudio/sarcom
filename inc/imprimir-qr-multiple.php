@@ -4,19 +4,40 @@
 	include('../dist/vendor/autoload.php');//Llamare el autoload de la clase que genera el QR
 	use Endroid\QrCode\QrCode;
 
-		require_once 'mpdf/vendor/autoload.php';
-		$mpdf = new \Mpdf\Mpdf();
-		$mpdf->watermarkImgBehind = true;
-		$mpdf->SetHTMLHeader("
-		");
+	// require_once 'mpdf/vendor/autoload.php';
+	require_once '../vendor/autoload.php';
+
+	$mpdf = new \Mpdf\Mpdf();
+	$mpdf->watermarkImgBehind = true;
+	$mpdf->SetHTMLHeader("
+	");
+
+	use Endroid\QrCode\Builder\Builder;
+	use Endroid\QrCode\Encoding\Encoding;
+	use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelLow;
+	use Endroid\QrCode\Label\Alignment\LabelAlignmentCenter;
+	use Endroid\QrCode\Logo\Logo;
+	use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
+	use Endroid\QrCode\Writer\PngWriter;
 
 
 	foreach ($_POST as $key => $value) {
-			$qrCode = new QrCode('consulta.html?q=ver_datos&id_ticket='.$value);//Creo una nueva instancia de la clase
-			$qrCode->setSize('300 px');//Establece el tamaño del qr
-			//header('Content-Type: '.$qrCode->getContentType());
-			$image= $qrCode->writeString();//Salida en formato de texto
-			$imageData = base64_encode($image);//Codifico la imagen usando base64_encode
+
+// Creo una nueva instancia de la clase QrCode con la URL
+			$qrCode = Builder::create()
+				->writer(new PngWriter())
+				->data('consulta.html?q=ver_datos&id_ticket=' . $value)
+				->encoding(new Encoding('UTF-8'))
+				// ->errorCorrectionLevel(new ErrorCorrectionLevelLow())
+				->size(300)
+				->margin(10)
+				// ->roundBlockSizeMode(new RoundBlockSizeModeMargin())
+				->build();
+
+			// Salida en formato Data URI para ser usado en una imagen HTML
+			$imageDataUri = $qrCode->getDataUri();
+
+			$imageData = base64_encode($imageDataUri);//Codifico la imagen usando base64_encode
 
 			$db->setQuery("SELECT t.id_ticket, t.id_cupos_proveedor, t.id_chofer, t.chapa, date_format(t.fecha_de_creacion, '%d-%m-%Y') as fecha_de_creacion, t.estado,
 			c.id_usuario, c.ci, c.nombre as chofer,
@@ -57,7 +78,7 @@
 			</h3>
 
 			 <h3 style="text-align: center;">
-			 <img src="data:image/png;base64,'.$imageData.'">
+			 <img src="'.$imageDataUri.'">
 			 </h3>
 			 <hr>
 			 <br>

@@ -83,11 +83,11 @@ break;
 
 case 'portero':
 	echo "
-			<li><a href='inicio.html'>Inicio<i class='fas fa-home'></i></a></li>
-			<li><a href='consulta.html'>Consulta<i class='fas fa-search'></i></a></li>
-			<li><a href='escanear.html'>Escanear<i class='fas fa-qrcode'></i></a></li>
+    <li><a href='inicio.html'>Inicio<i class='fas fa-home'></i></a></li>
+    <!-- <li><a href='consulta.html'>Consulta<i class='fas fa-search'></i></a></li> -->
+    <li><a href='escanear.html'>Escanear<i class='fas fa-qrcode'></i></a></li>
+";
 
-	";
 break;
 }
 
